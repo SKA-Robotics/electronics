@@ -1,0 +1,14 @@
+Change Component Designator: OldDesignator=J? NewDesignator=J4
+Add Pin To Net: Unknown Pin: Pin D1-1
+Add Pin To Net: Unknown Pin: Pin D1-2
+Add Pin To Net: Unknown Pin: Pin D2-1
+Add Pin To Net: Unknown Pin: Pin D2-2
+Add Pin To Net: Unknown Pin: Pin ISP1-1
+Add Pin To Net: Unknown Pin: Pin ISP1-2
+Add Pin To Net: Unknown Pin: Pin ISP1-3
+Add Pin To Net: Unknown Pin: Pin ISP1-4
+Add Pin To Net: Unknown Pin: Pin ISP1-5
+Add Pin To Net: Unknown Pin: Pin ISP1-6
+Add Class Member: Failed to add class member : Component D1 Diode
+Add Class Member: Failed to add class member : Component D2 Diode
+Add Class Member: Failed to add class member : Component ISP1 ISP_connector

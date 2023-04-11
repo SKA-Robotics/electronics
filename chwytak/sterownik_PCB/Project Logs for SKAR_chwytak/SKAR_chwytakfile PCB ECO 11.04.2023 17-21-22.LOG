@@ -1,0 +1,28 @@
+Removed Pin From Net: NetName=VCC Pin=R1-1
+Removed Pin From Net: NetName=NetIC5_17 Pin=R1-2
+Change Component Footprint: Designator=R1 Old Footprint=AXIAL-0.3 New Footprint=RESC0603X28N
+Change Component Comment : Designator=R1 Old Comment=Res1 New Comment=10K
+Change component parameters: Designator = "R1" ("R1"); Footprint = "AXIAL-0.3"; UniqueID = "\SJCEVSGS" ("\SJCEVSGS")
+Change component parameters (AddParameter): Name = "Arrow Part Number"; Value = "CPF0201D100RE1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Arrow Price/Stock"; Value = "https://www.arrow.com/en/products/cpf0201d100re1/te-connectivity?region=nac"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Datasheet Link"; Value = "http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Data+Sheet%7F1773200-1%7FA%7Fpdf%7FEnglish%7FENG_DS_1773200-1_A.pdf%7F4-2176215-6"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "0.28mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Name"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "CPF0201D100RE1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Part Number"; Value = "279-CPF0201D100RE1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mouser Price/Stock"; Value = "https://www.mouser.co.uk/ProductDetail/TE-Connectivity-Holsworthy/CPF0201D100RE1?qs=gt1LBUVyoHlmoWock10t3Q%3D%3D"; VariantName = "[No Variations]"
+Add Pin To Net: Unknown Pin: Pin D1-1
+Add Pin To Net: Unknown Pin: Pin D1-2
+Add Pin To Net: Unknown Pin: Pin D2-1
+Add Pin To Net: Unknown Pin: Pin D2-2
+Add Pin To Net: Unknown Pin: Pin ISP1-1
+Add Pin To Net: Unknown Pin: Pin ISP1-2
+Add Pin To Net: Unknown Pin: Pin ISP1-3
+Add Pin To Net: Unknown Pin: Pin ISP1-4
+Add Pin To Net: Unknown Pin: Pin ISP1-5
+Add Pin To Net: Unknown Pin: Pin ISP1-6
+Added Pin To Net: NetName=NetIC5_17 Pin=R1-1
+Added Pin To Net: NetName=VCC Pin=R1-2
+Add Class Member: Failed to add class member : Component D1 Diode
+Add Class Member: Failed to add class member : Component D2 Diode
+Add Class Member: Failed to add class member : Component ISP1 ISP_connector

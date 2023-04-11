@@ -1,0 +1,18 @@
+Change Component Designator: OldDesignator= NewDesignator=IC5
+Add Pin To Net: Unknown Pin: Pin D1-1
+Add Pin To Net: Unknown Pin: Pin D1-2
+Add Pin To Net: Unknown Pin: Pin D2-1
+Add Pin To Net: Unknown Pin: Pin D2-2
+Add Pin To Net: Unknown Pin: Pin ISP1-1
+Add Pin To Net: Unknown Pin: Pin ISP1-2
+Add Pin To Net: Unknown Pin: Pin ISP1-3
+Add Pin To Net: Unknown Pin: Pin ISP1-4
+Add Pin To Net: Unknown Pin: Pin ISP1-5
+Add Pin To Net: Unknown Pin: Pin ISP1-6
+Change Net Name : Old Net Name=Net_1 New Net Name=NetIC3_1
+Change Net Name : Old Net Name=Net_2 New Net Name=NetIC3_4
+Change Net Name : Old Net Name=Net_17 New Net Name=NetIC5_17
+Add Class Member: Failed to add class member : Component D1 Diode
+Add Class Member: Failed to add class member : Component D2 Diode
+Add Class Member: Failed to add class member : Component ISP1 ISP_connector
+Added Member To Class: ClassName=Sheet1 Member=Component J3 1714984
