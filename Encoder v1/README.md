@@ -22,7 +22,7 @@ Yellow -> magnet too far (MGL)
 # Pinout
 
 ## Input and output
-![Screenshot](https://github.com/SKA-Robotics/electronics/blob/Enkoder/Encoder%20v1/Images/Input.png)
+![Screenshot](Images/Input.png)
 
 Ground is differentiated with a square pad.
 Looking from the top of the connector the pinout for incremental mode is as follows:
@@ -38,7 +38,7 @@ For SPI mode pinout is:
 |MOSI_P|MISO_P|SCLK_P|NC|+5V|
 
 ## Chip select 
-![Screenshot](https://github.com/SKA-Robotics/electronics/blob/Enkoder/Encoder%20v1/Images/CS.png)
+![Screenshot](Images/CS.png)
 Only pins 1 and 2 are connected to the encoder, while the rest connects to `CS_OUT` connector, shifting to the right.
 
 Pin 1 -> CS_N
@@ -46,8 +46,8 @@ Pin 1 -> CS_N
 pin 2  -> CS_P
 
 # Pictures
-![Screenshot](https://github.com/SKA-Robotics/electronics/blob/Enkoder/Encoder%20v1/Images/Top.png)
-![Screenshot](https://github.com/SKA-Robotics/electronics/blob/Enkoder/Encoder%20v1/Images/Bottom.png)
-![Screenshot](https://github.com/SKA-Robotics/electronics/blob/Enkoder/Encoder%20v1/Images/Dimensions.png)
+![Screenshot](Images/Top.png)
+![Screenshot](Images/Bottom.png)
+![Screenshot](Images/Dimensions.png)
 # Notes
 There were 12 units made in total. All of the work in incremental ABZ mode, however due to manufacturing issues only a few of them work in SPI mode. 
