@@ -96,6 +96,6 @@ Harness can be secured with velcro stripes or zip-ties. Make sure that there is 
 
 When servicing the harness, try to make the wires equal lengths to balance forces acting on the connector (in case of sudden gripper separation).
 
-While crimping new connectors, remove only as much isolation as is needed. A proper crimp should grab both metal parts of the wire an a bit of the isolation. A proper crimp should resist significant pull force. When inserting a cripmed wire into a plastic housing, push until you hear a satisfying *click*, and ensude the wire is secured by pulling on it.
+While crimping new connectors, remove only as much isolation as is needed. A proper crimp should grab both metal parts of the wire an a bit of the isolation. A proper crimp should resist significant pull force. When inserting a cripmed wire into a plastic housing, push until you hear a satisfying *click*, and ensure the wire is secured by pulling on it.
 
 For further information, refer to manufacturers' guidelines.
