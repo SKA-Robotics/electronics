@@ -82,8 +82,11 @@ This connector is used for the motors ant to power the gripper servo
  
 # Photos
 ![Screenshot](Images/img.png)
+
 A complete harness without connecotrs.
+
 ![Screenshot](Images/img2.png)
+
 Wiring inside Roboszpon box.
 
 
