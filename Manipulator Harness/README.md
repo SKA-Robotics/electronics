@@ -5,7 +5,7 @@ This is a wiring harness connecting Roboszpon box inside the frame with motors a
 Wiring harness is designed with regular Molex Micro-Fit 3.0 connectors in mind.
 Cable used is 20AWG or 0.5mm^2 silicone coated copper wire.
 Connectors used:
-8-pin for rotaiton, 12-pin for motors and servo power, 16-pin for encorers
+8-pin for rotation, 12-pin for motors and servo power, 16-pin for encorers
 6-pin for encoders, 2-pin vertical for motors and 2-pin horizontal for servo power
 
 # Part numbers
