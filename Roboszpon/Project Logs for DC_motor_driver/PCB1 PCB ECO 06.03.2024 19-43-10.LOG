@@ -1,0 +1,10 @@
+Change Component Comment : Designator=R? Old Comment=NCP18XV103J03RB New Comment=10k NTC
+Change Component Designator: OldDesignator=R? NewDesignator=R10
+Change Component Designator: OldDesignator=R? NewDesignator=R11
+Added Pin To Net: NetName=+3.3 Pin=R10-2
+Added Pin To Net: NetName=GND Pin=R11-1
+Added Pin To Net: NetName=NetR10_1 Pin=R10-1
+Added Pin To Net: NetName=NetR10_1 Pin=R11-2
+Added Pin To Net: NetName=NetR10_1 Pin=U1-25
+Added Net: Name=NetR10_1
+Added Member To Class: ClassName=Sheet1 Member=Component R10 10k
