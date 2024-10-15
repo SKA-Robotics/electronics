@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=CAN Pin=U1-15
+Removed Pin From Net: NetName=ENC1 Pin=U1-16
+Removed Pin From Net: NetName=ENC2 Pin=U1-17
+Removed Pin From Net: NetName=POWER Pin=U1-20
+Removed Pin From Net: NetName=CS_ENC0 Pin=U1-56
+Removed Pin From Net: NetName=CS_ENC1 Pin=U1-57
+Removed Pin From Net: NetName=CS_DRV0 Pin=U1-58
+Removed Pin From Net: NetName=CS_DRV1 Pin=U1-59
+Added Pin To Net: NetName=CS_ENC1 Pin=U1-17
+Added Pin To Net: NetName=CS_ENC0 Pin=U1-33
+Added Pin To Net: NetName=CS_DRV0 Pin=U1-34
+Added Pin To Net: NetName=CS_DRV1 Pin=U1-50
+Added Pin To Net: NetName=CAN Pin=U1-56
+Added Pin To Net: NetName=ENC1 Pin=U1-57
+Added Pin To Net: NetName=ENC2 Pin=U1-58
+Added Pin To Net: NetName=POWER Pin=U1-59
