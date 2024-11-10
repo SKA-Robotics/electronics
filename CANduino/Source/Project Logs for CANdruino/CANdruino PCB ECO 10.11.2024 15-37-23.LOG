@@ -1,0 +1,22 @@
+Removed Pin From Net: NetName=+5 Pin=C10-1
+Removed Pin From Net: NetName=GND Pin=U1-33
+Removed Member From Class: ClassName=Copy of canbus_shield Member=C10
+Added Pin To Net: NetName=+5 Pin=C12-1
+Change Net Name : Old Net Name=A0 New Net Name=D18/A0
+Change Net Name : Old Net Name=A1 New Net Name=D19/A1
+Change Net Name : Old Net Name=A2 New Net Name=D20/A2
+Change Net Name : Old Net Name=A3 New Net Name=D21/A3
+Change Net Name : Old Net Name=A4 New Net Name=D22/A4
+Change Net Name : Old Net Name=A5 New Net Name=D23/A5
+Change Net Name : Old Net Name=D4 New Net Name=D4/A6
+Change Net Name : Old Net Name=D6 New Net Name=D6/A7
+Change Net Name : Old Net Name=IO08 New Net Name=D8/A8
+Change Net Name : Old Net Name=IO09 New Net Name=D9/A9
+Change Net Name : Old Net Name=IO11 New Net Name=D11
+Change Net Name : Old Net Name=IO12 New Net Name=D12/A11
+Change Net Name : Old Net Name=IO13 New Net Name=D13
+Added Pin To Net: NetName=AREF Pin=FB1-2
+Added Pin To Net: NetName=AREF Pin=J3-15
+Added Pin To Net: NetName=AREF Pin=U1-42
+Added Net: Name=AREF
+Change Class Name : Old Net Name=Copy of canbus_shield New Net Name=CANdruino
