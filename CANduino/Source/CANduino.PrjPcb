@@ -83,6 +83,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=SEOQUXFY
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for CANduino\Design Rule Check - CANduino.html
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
