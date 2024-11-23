@@ -1,0 +1,487 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD24\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">22.11.2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">23:46:32</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc" class="file"><acronym title="C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc">C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">45</td></tr>
+</table>
+</td>
+</table><a name="IDE03V02A0MKEKIRQBZVU5YYX4UPFOP0IMNRQMOXOVBSQ2VAUQI15"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCXLH0QFQRMHVK04Q4IPSCMGSGIRBZSRBVXBIZGN2EESYEDM3QWZC">Clearance Constraint (Gap=0.09mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGC1GOPHNKFRBJZNPAHMX5E5A2FGZ5FBGMOTFW5FSFQ5JZH2D13YI">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDT5LFAS5E1ZFBNHHAOHLLRE2C2NF4VJIPL2OYIGX15AN4032PVUP">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYDSVLLSQEE1YOHK2DO0YW4ND4LUHBDGEBR5MLJCQWKHXVAY0O55O">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIABO21PDZNUICEK4WXDGGPBCDC5UVE25SIPH5VKSPGMEZDF1YSNI">Width Constraint (Min=0.16mm) (Max=0.254mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDBY1R3EYSQ44BEGCT1MOMGS0KOJ2F0WC2LSQ3NBKLTKYN0ICWVB">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIGLWL0ZDNSX2HIQKINIU3FTXBFHNZM1R4CENRECCABO3SN42PZXH">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDTOPRHUWP5MX1N2PUZ5TY542CRJMZXGSJT14HEYHNRQLA00HV3YUE">Minimum Annular Ring (Minimum=0.025mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDMLMJOKSSPSYNYGNUCBMNSP1PLMPDPT1JIS20KFMJFS1WB3SFQQI">Hole Size Constraint (Min=0.15mm) (Max=6.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIYAT2UGZU2SZD4KWQPUCQK1HVMJHK4XJYTO0HHP0APU3B0DC4ZSJ">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTHUOH4SAORKOBTGYPFH0VV4WGFMRON35AJ12FP0ZMHV31QKLRAJ">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMHPBT3ASVNWXFNWLKDWAB4V0OINSUFORB2LN45TTUBS5CFTLFPF">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">28</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTFAJ1CNXCEYZE2NRONQI2RD5PEBXINQBCKSO1RE1OA0WCNUCFB2F">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPBKTXVHLL4FDINDPMTQXGBCGZPDNVI0DIMVCCBIWGAR1U4YZPPEO">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4VHZBQJSNYNBW52OHYD021P0B4322LJ5XOVTGHKRKSTL4FUDB3">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">12</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOAEL1HD4TXEGESSPP541TES0AOWW10DNDR5BKEHDDU1FX54OEG4N">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">45</td>
+</tr>
+</table><br><a name="IDTHUOH4SAORKOBTGYPFH0VV4WGFMRON35AJ12FP0ZMHV31QKLRAJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1262.006mil|Location2.X=1267.193mil|Location1.Y=2417.038mil|Location2.Y=2422.225mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1262.006mil|Location2.X=1267.193mil|Location1.Y=2417.038mil|Location2.Y=2422.225mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.099mm &lt; 0.1mm) Between Pad J1-(6.351mm,18.713mm) on Multi-Layer And Pad J1-B1_A12(7.426mm,18.403mm) on Top Layer [Top Solder] Mask Sliver [0.099mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1262.006mil|Location2.X=1267.193mil|Location1.Y=2644.597mil|Location2.Y=2649.784mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1262.006mil|Location2.X=1267.193mil|Location1.Y=2644.597mil|Location2.Y=2649.784mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.099mm &lt; 0.1mm) Between Pad J1-(6.351mm,24.493mm) on Multi-Layer And Pad J1-A1_B12(7.426mm,24.803mm) on Top Layer [Top Solder] Mask Sliver [0.099mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2363.454mil|Location2.X=2370.32mil|Location1.Y=2151.585mil|Location2.Y=2158.697mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2363.454mil|Location2.X=2370.32mil|Location1.Y=2151.585mil|Location2.Y=2158.697mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.014mm &lt; 0.1mm) Between Pad U1-22(34.608mm,12.476mm) on Top Layer And Via (34.952mm,11.802mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.014mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1665.711mil|Location2.X=1670.898mil|Location1.Y=2308.577mil|Location2.Y=2313.764mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1665.711mil|Location2.X=1670.898mil|Location1.Y=2308.577mil|Location2.Y=2313.764mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.071mm &lt; 0.1mm) Between Pad U2-19(17.018mm,15.534mm) on Top Layer And Via (17.018mm,16.256mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.071mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDMHPBT3ASVNWXFNWLKDWAB4V0OINSUFORB2LN45TTUBS5CFTLFPF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1705.281mil|Location2.X=1716.531mil|Location1.Y=2401.698mil|Location2.Y=2412.948mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1705.281mil|Location2.X=1716.531mil|Location1.Y=2401.698mil|Location2.Y=2412.948mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Arc (18.1mm,18.15mm) on Top Overlay And Pad TX CAN-1(18.1mm,18.9mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2072.064mil|Location2.X=2083.314mil|Location1.Y=2446.028mil|Location2.Y=2457.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2072.064mil|Location2.X=2083.314mil|Location1.Y=2446.028mil|Location2.Y=2457.278mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.133mm &lt; 0.254mm) Between Arc (27.733mm,19.526mm) on Top Overlay And Pad C2-2(26.6mm,19.2mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.133mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1346.584mil|Location2.X=1357.834mil|Location1.Y=2655.739mil|Location2.Y=2666.989mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1346.584mil|Location2.X=1357.834mil|Location1.Y=2655.739mil|Location2.Y=2666.989mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.236mm &lt; 0.254mm) Between Arc (8.671mm,24.853mm) on Top Overlay And Pad R7-1(9.534mm,24.892mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.236mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1610.792mil|Location2.X=1622.042mil|Location1.Y=2504.061mil|Location2.Y=2515.311mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1610.792mil|Location2.X=1622.042mil|Location1.Y=2504.061mil|Location2.Y=2515.311mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.2mm &lt; 0.254mm) Between Area Fill (16.025mm,20.775mm) (16.175mm,21.575mm) on Top Overlay And Pad RX CAN-1(16.1mm,20.5mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.2mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2340.615mil|Location2.X=2351.865mil|Location1.Y=1877.092mil|Location2.Y=1888.342mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2340.615mil|Location2.X=2351.865mil|Location1.Y=1877.092mil|Location2.Y=1888.342mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C11-1(35mm,5.75mm) on Top Layer And Track (33.95mm,5.075mm)(34.05mm,5.075mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2340.615mil|Location2.X=2351.865mil|Location1.Y=1930.241mil|Location2.Y=1941.491mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2340.615mil|Location2.X=2351.865mil|Location1.Y=1930.241mil|Location2.Y=1941.491mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C11-1(35mm,5.75mm) on Top Layer And Track (33.95mm,6.425mm)(34.05mm,6.425mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2321.914mil|Location2.X=2333.164mil|Location1.Y=1877.092mil|Location2.Y=1888.342mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2321.914mil|Location2.X=2333.164mil|Location1.Y=1877.092mil|Location2.Y=1888.342mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C11-2(33mm,5.75mm) on Top Layer And Track (33.95mm,5.075mm)(34.05mm,5.075mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2321.914mil|Location2.X=2333.164mil|Location1.Y=1930.241mil|Location2.Y=1941.491mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2321.914mil|Location2.X=2333.164mil|Location1.Y=1930.241mil|Location2.Y=1941.491mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C11-2(33mm,5.75mm) on Top Layer And Track (33.95mm,6.425mm)(34.05mm,6.425mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1742.344mil|Location2.X=1753.594mil|Location1.Y=2024.631mil|Location2.Y=2035.881mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1742.344mil|Location2.X=1753.594mil|Location1.Y=2024.631mil|Location2.Y=2035.881mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C13-1(19.716mm,8.06mm) on Top Layer And Track (19.041mm,9.01mm)(19.041mm,9.11mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1795.494mil|Location2.X=1806.744mil|Location1.Y=2024.631mil|Location2.Y=2035.881mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1795.494mil|Location2.X=1806.744mil|Location1.Y=2024.631mil|Location2.Y=2035.881mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C13-1(19.716mm,8.06mm) on Top Layer And Track (20.391mm,9.01mm)(20.391mm,9.11mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1742.344mil|Location2.X=1753.594mil|Location1.Y=2043.332mil|Location2.Y=2054.582mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1742.344mil|Location2.X=1753.594mil|Location1.Y=2043.332mil|Location2.Y=2054.582mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C13-2(19.716mm,10.06mm) on Top Layer And Track (19.041mm,9.01mm)(19.041mm,9.11mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1795.494mil|Location2.X=1806.744mil|Location1.Y=2043.332mil|Location2.Y=2054.582mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1795.494mil|Location2.X=1806.744mil|Location1.Y=2043.332mil|Location2.Y=2054.582mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C13-2(19.716mm,10.06mm) on Top Layer And Track (20.391mm,9.01mm)(20.391mm,9.11mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1622.111mil|Location2.X=1633.361mil|Location1.Y=1886.934mil|Location2.Y=1898.184mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1622.111mil|Location2.X=1633.361mil|Location1.Y=1886.934mil|Location2.Y=1898.184mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C14-1(16.75mm,6mm) on Top Layer And Track (15.7mm,5.325mm)(15.8mm,5.325mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1622.111mil|Location2.X=1633.361mil|Location1.Y=1940.084mil|Location2.Y=1951.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1622.111mil|Location2.X=1633.361mil|Location1.Y=1940.084mil|Location2.Y=1951.334mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C14-1(16.75mm,6mm) on Top Layer And Track (15.7mm,6.675mm)(15.8mm,6.675mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1603.41mil|Location2.X=1614.66mil|Location1.Y=1886.934mil|Location2.Y=1898.184mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1603.41mil|Location2.X=1614.66mil|Location1.Y=1886.934mil|Location2.Y=1898.184mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C14-2(14.75mm,6mm) on Top Layer And Track (15.7mm,5.325mm)(15.8mm,5.325mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1603.41mil|Location2.X=1614.66mil|Location1.Y=1940.084mil|Location2.Y=1951.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1603.41mil|Location2.X=1614.66mil|Location1.Y=1940.084mil|Location2.Y=1951.334mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C14-2(14.75mm,6mm) on Top Layer And Track (15.7mm,6.675mm)(15.8mm,6.675mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1936.938mil|Location2.X=1948.188mil|Location1.Y=2430.454mil|Location2.Y=2441.704mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1936.938mil|Location2.X=1948.188mil|Location1.Y=2430.454mil|Location2.Y=2441.704mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.132mm &lt; 0.254mm) Between Pad C2-1(24.8mm,19.2mm) on Top Layer And Text "C2" (23.913mm,18.983mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.132mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2144.257mil|Location2.X=2155.507mil|Location1.Y=1990.281mil|Location2.Y=2001.531mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2144.257mil|Location2.X=2155.507mil|Location1.Y=1990.281mil|Location2.Y=2001.531mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Pad C7-1(30.1mm,8.7mm) on Top Layer And Track (29.075mm,7.839mm)(29.075mm,9.761mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2144.257mil|Location2.X=2155.507mil|Location1.Y=2061.147mil|Location2.Y=2072.397mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2144.257mil|Location2.X=2155.507mil|Location1.Y=2061.147mil|Location2.Y=2072.397mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.15mm &lt; 0.254mm) Between Pad C7-2(30.1mm,10.5mm) on Top Layer And Track (29.075mm,7.839mm)(29.075mm,9.761mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2428.841mil|Location2.X=2440.091mil|Location1.Y=1987.957mil|Location2.Y=1999.207mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2428.841mil|Location2.X=2440.091mil|Location1.Y=1987.957mil|Location2.Y=1999.207mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.157mm &lt; 0.254mm) Between Pad C8-1(37.332mm,7.212mm) on Top Layer And Track (36.3mm,7.9mm)(36.3mm,10.3mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.157mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2435.871mil|Location2.X=2447.121mil|Location1.Y=1991.245mil|Location2.Y=2002.495mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2435.871mil|Location2.X=2447.121mil|Location1.Y=1991.245mil|Location2.Y=2002.495mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C8-1(37.332mm,7.212mm) on Top Layer And Track (36.657mm,8.162mm)(36.657mm,8.262mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2489.021mil|Location2.X=2500.271mil|Location1.Y=1991.245mil|Location2.Y=2002.495mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2489.021mil|Location2.X=2500.271mil|Location1.Y=1991.245mil|Location2.Y=2002.495mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C8-1(37.332mm,7.212mm) on Top Layer And Track (38.007mm,8.162mm)(38.007mm,8.262mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2428.843mil|Location2.X=2440.093mil|Location1.Y=2013.391mil|Location2.Y=2024.641mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2428.843mil|Location2.X=2440.093mil|Location1.Y=2013.391mil|Location2.Y=2024.641mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.157mm &lt; 0.254mm) Between Pad C8-2(37.332mm,9.212mm) on Top Layer And Track (36.3mm,7.9mm)(36.3mm,10.3mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.157mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2435.871mil|Location2.X=2447.121mil|Location1.Y=2009.946mil|Location2.Y=2021.196mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2435.871mil|Location2.X=2447.121mil|Location1.Y=2009.946mil|Location2.Y=2021.196mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C8-2(37.332mm,9.212mm) on Top Layer And Track (36.657mm,8.162mm)(36.657mm,8.262mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2489.021mil|Location2.X=2500.271mil|Location1.Y=2009.946mil|Location2.Y=2021.196mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2489.021mil|Location2.X=2500.271mil|Location1.Y=2009.946mil|Location2.Y=2021.196mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.175mm &lt; 0.254mm) Between Pad C8-2(37.332mm,9.212mm) on Top Layer And Track (38.007mm,8.162mm)(38.007mm,8.262mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.175mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1468.793mil|Location2.X=1482.034mil|Location1.Y=2483.995mil|Location2.Y=2495.245mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1468.793mil|Location2.X=1482.034mil|Location1.Y=2483.995mil|Location2.Y=2495.245mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.219mm &lt; 0.254mm) Between Pad D1-1(11.601mm,20.991mm) on Top Layer And Track (12.174mm,17.147mm)(12.174mm,20.297mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.219mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1390.349mil|Location2.X=1401.599mil|Location1.Y=1927.879mil|Location2.Y=1939.129mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1390.349mil|Location2.X=1401.599mil|Location1.Y=1927.879mil|Location2.Y=1939.129mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.092mm &lt; 0.254mm) Between Pad J4-1(9.22mm,7.2mm) on Multi-Layer And Track (10.21mm,5.125mm)(10.21mm,12.275mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.092mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1390.357mil|Location2.X=1401.607mil|Location1.Y=2078.863mil|Location2.Y=2090.113mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1390.357mil|Location2.X=1401.607mil|Location1.Y=2078.863mil|Location2.Y=2090.113mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.091mm &lt; 0.254mm) Between Pad J4-2(9.22mm,10.2mm) on Multi-Layer And Track (10.21mm,5.125mm)(10.21mm,12.275mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.091mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDTFAJ1CNXCEYZE2NRONQI2RD5PEBXINQBCKSO1RE1OA0WCNUCFB2F"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1903.192mil|Location2.X=1914.442mil|Location1.Y=2527.786mil|Location2.Y=2540.613mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1903.192mil|Location2.X=1914.442mil|Location1.Y=2527.786mil|Location2.Y=2540.613mil|Absolute=True">Silk To Silk Clearance Constraint: (0.188mm &lt; 0.254mm) Between Text "C5" (23.531mm,21.034mm) on Top Overlay And Track (22.956mm,21.694mm)(22.956mm,24.106mm) on Top Overlay Silk Text to Silk Clearance [0.188mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID4VHZBQJSNYNBW52OHYD021P0B4322LJ5XOVTGHKRKSTL4FUDB3"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Board Clearance Constraint (Gap=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=976.285mil|Location2.X=982.534mil|Location1.Y=2829.395mil|Location2.Y=2835.644mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=976.285mil|Location2.X=982.534mil|Location1.Y=2829.395mil|Location2.Y=2835.644mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Arc (-0.48mm,29.2mm) on Top Overlay And Board Edge </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2733.135mil|Location2.X=2739.385mil|Location1.Y=1729.789mil|Location2.Y=1736.038mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2733.135mil|Location2.X=2739.385mil|Location1.Y=1729.789mil|Location2.Y=1736.038mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Arc (44.144mm,1.27mm) on Top Overlay And Board Edge </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=996.16mil|Location2.X=1002.409mil|Location1.Y=2829.64mil|Location2.Y=2835.889mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=996.16mil|Location2.X=1002.409mil|Location1.Y=2829.64mil|Location2.Y=2835.889mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (0.03mm,27.95mm)(0.03mm,30.45mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854.238mil|Location2.X=1860.487mil|Location1.Y=2780.182mil|Location2.Y=2786.432mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854.238mil|Location2.X=1860.487mil|Location1.Y=2780.182mil|Location2.Y=2786.432mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (0.03mm,27.95mm)(43.61mm,27.95mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854.238mil|Location2.X=1860.487mil|Location1.Y=2878.608mil|Location2.Y=2884.857mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1854.238mil|Location2.X=1860.487mil|Location1.Y=2878.608mil|Location2.Y=2884.857mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (0.03mm,30.45mm)(43.61mm,30.45mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=997.145mil|Location2.X=1003.394mil|Location1.Y=1729.135mil|Location2.Y=1735.384mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=997.145mil|Location2.X=1003.394mil|Location1.Y=1729.135mil|Location2.Y=1735.384mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (0.054mm,0.02mm)(0.054mm,2.52mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1855.182mil|Location2.X=1861.432mil|Location1.Y=1680.576mil|Location2.Y=1686.825mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1855.182mil|Location2.X=1861.432mil|Location1.Y=1680.576mil|Location2.Y=1686.825mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (0.054mm,0.02mm)(43.634mm,0.02mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1855.182mil|Location2.X=1861.432mil|Location1.Y=1779.001mil|Location2.Y=1785.251mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1855.182mil|Location2.X=1861.432mil|Location1.Y=1779.001mil|Location2.Y=1785.251mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (0.054mm,2.52mm)(43.634mm,2.52mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=994.456mil|Location2.X=1000.705mil|Location1.Y=2354.302mil|Location2.Y=2360.551mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=994.456mil|Location2.X=1000.705mil|Location1.Y=2354.302mil|Location2.Y=2360.551mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (0.071mm,17.133mm)(1.351mm,17.133mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=994.456mil|Location2.X=1000.705mil|Location1.Y=2706.271mil|Location2.Y=2712.52mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=994.456mil|Location2.X=1000.705mil|Location1.Y=2706.271mil|Location2.Y=2712.52mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (0.071mm,26.073mm)(1.351mm,26.073mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2712.112mil|Location2.X=2718.361mil|Location1.Y=2829.395mil|Location2.Y=2835.644mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2712.112mil|Location2.X=2718.361mil|Location1.Y=2829.395mil|Location2.Y=2835.644mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (43.61mm,27.95mm)(43.61mm,30.45mm) on Top Overlay </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2713.057mil|Location2.X=2719.306mil|Location1.Y=1729.789mil|Location2.Y=1736.038mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\selim\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2713.057mil|Location2.X=2719.306mil|Location1.Y=1729.789mil|Location2.Y=1736.038mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (43.634mm,0.02mm)(43.634mm,2.52mm) on Top Overlay </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
