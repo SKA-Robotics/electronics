@@ -2,3 +2,5 @@
 Version=1.0
 [Project1]
 ProjectPath=Encoder v1\Source\Encoder.PrjPcb
+[Project2]
+ProjectPath=MPS_PSU_Eval\Source\MPS_PSU_Eval.PrjPcb
