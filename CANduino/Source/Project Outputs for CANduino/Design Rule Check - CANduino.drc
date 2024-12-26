@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : D:\electronics\CANduino\Source\CANduino.PcbDoc
 Date     : 26.12.2024
-Time     : 16:16:11
+Time     : 16:18:04
 
 Processing Rule : Clearance Constraint (Gap=0.12mm) (All),(All)
 Rule Violations :0
@@ -88,7 +88,80 @@ Waived Violations Of Rule : Net Antennae (Tolerance=0mm) (All)
    Waived Violation between Net Antennae: Via (8.8mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:14:55Part quirk
 Waived Violations :26
 
+Waived Violations Of Rule : Board Clearance Constraint (Gap=0mm) (All)
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-1(41.82mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-10(18.96mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-11(16.42mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-12(13.88mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-13(11.34mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-14(8.8mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-15(6.26mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-16(3.72mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-17(1.18mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-2(39.28mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-3(36.74mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-4(34.2mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-5(31.66mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-6(29.12mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-7(26.58mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-8(24.04mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J1-9(21.5mm,1.5mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-1(1.18mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-10(24.04mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-11(26.58mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-12(29.12mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-13(31.66mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-14(34.2mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-15(36.74mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-16(39.28mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-17(41.82mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-2(3.72mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-3(6.26mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-4(8.8mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-5(11.34mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-6(13.88mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-7(16.42mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-8(18.96mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (0mm < 0.2mm) Between Board Edge And Pad J2-9(21.5mm,29mm) on Multi-Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (16.42mm,0mm)(16.42mm,1.5mm) on Top Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Track (3.72mm,0mm)(3.72mm,1.5mm) on Top Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (1.18mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (1.18mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (11.34mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (11.34mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (13.88mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (13.88mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (16.42mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (16.42mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (18.96mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (18.96mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (21.5mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (21.5mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (24.04mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (24.04mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (26.58mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (26.58mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (29.12mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (29.12mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (3.72mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (3.72mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (31.66mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (31.66mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (34.2mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (34.2mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (36.74mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (36.74mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (39.28mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (39.28mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (41.82mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (41.82mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (6.26mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (6.26mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (8.8mm,0mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+   Waived Violation between Board Outline Clearance(Outline Edge): (Collision < 0.2mm) Between Board Edge And Via (8.8mm,30.5mm) from Top Layer to Bottom Layer Waived by Micha³ Go³¹b at 26.12.2024 16:17:57Part quirk
+Waived Violations :70
+
 
 Violations Detected : 0
-Waived Violations : 31
+Waived Violations : 101
 Time Elapsed        : 00:00:00
