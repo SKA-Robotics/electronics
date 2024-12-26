@@ -1,0 +1,61 @@
+Protel Design System Design Rule Check
+PCB File : D:\electronics\Encoder v2\Source\Encoder_v2.PcbDoc
+Date     : 26.12.2024
+Time     : 17:14:23
+
+Processing Rule : Clearance Constraint (Gap=0.127mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.254mm) ((InNet('NetC205_2') OR InNet('NETC203_2') OR InNet('NETC206_2') OR InNet('NetP410_1') OR InNet('NetP410_3') OR InNet('VM'))),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+   Violation between Short-Circuit Constraint: Between Pad J1-(32.3mm,30.325mm) on Multi-Layer And Polygon Region (15 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J1-(32.3mm,30.325mm) on Multi-Layer And Polygon Region (6 hole(s)) Bottom Layer Location : [X = 0mm][Y = 0mm]
+Rule Violations :2
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.18mm) (Max=0.5mm) (Preferred=0.18mm) (InNetClass('Voltage'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.127mm) (Max=0.5mm) (Preferred=0.18mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=6.5mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.08mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.15mm) Between Arc (31.65mm,45.825mm) on Top Overlay And Pad R1-2(30.975mm,45.8mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.15mm) Between Arc (31.65mm,48.025mm) on Top Overlay And Pad R2-2(30.975mm,48mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.15mm) Between Arc (31.65mm,50.125mm) on Top Overlay And Pad R3-2(30.975mm,50.1mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.068mm < 0.15mm) Between Pad U1-1(33.748mm,48.75mm) on Bottom Layer And Text "*" (35.107mm,48.115mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.068mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.068mm < 0.15mm) Between Pad U1-2(33.748mm,48.25mm) on Bottom Layer And Text "*" (35.107mm,48.115mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.068mm]
+Rule Violations :5
+
+Processing Rule : Silk to Silk (Clearance=0mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 7
+Waived Violations : 0
+Time Elapsed        : 00:00:00
