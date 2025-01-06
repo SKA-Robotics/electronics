@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : D:\electronics\CANduino\Source\CANduino.PcbDoc
-Date     : 26.12.2024
-Time     : 16:18:04
+Date     : 06.01.2025
+Time     : 17:43:12
 
 Processing Rule : Clearance Constraint (Gap=0.12mm) (All),(All)
 Rule Violations :0
@@ -10,7 +10,9 @@ Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-Rule Violations :0
+   Violation between Un-Routed Net Constraint: Polygon  (NONET_L-01_P-001) on Bottom Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Polygon  (NONET_L-01_P-001) on Bottom Layer Dead Copper - Net Not Assigned.
+Rule Violations :2
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -34,7 +36,12 @@ Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)
-Rule Violations :0
+   Violation between Minimum Solder Mask Sliver Constraint: (0.05mm < 0.1mm) Between Region (0 hole(s)) Bottom Solder And Region (0 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.05mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.038mm < 0.1mm) Between Region (0 hole(s)) Bottom Solder And Region (1 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.038mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.068mm < 0.1mm) Between Region (0 hole(s)) Bottom Solder And Region (12 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.068mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.066mm < 0.1mm) Between Region (1 hole(s)) Bottom Solder And Region (1 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.066mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.079mm < 0.1mm) Between Region (1 hole(s)) Bottom Solder And Region (12 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.079mm]
+Rule Violations :5
 
 Processing Rule : Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)
 Rule Violations :0
@@ -162,6 +169,6 @@ Waived Violations Of Rule : Board Clearance Constraint (Gap=0mm) (All)
 Waived Violations :70
 
 
-Violations Detected : 0
+Violations Detected : 7
 Waived Violations : 101
 Time Elapsed        : 00:00:00
