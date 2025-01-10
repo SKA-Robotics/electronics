@@ -3,4 +3,4 @@ Version=1.0
 [Project1]
 ProjectPath=Encoder v1\Source\Encoder.PrjPcb
 [Project2]
-ProjectPath=..\..\..\..\Public\Documents\Altium\BatteryModule\Battery_Module.PrjPcb
+ProjectPath=Battery\Source\Battery_Module.PrjPcb
