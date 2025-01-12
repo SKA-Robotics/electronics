@@ -1,0 +1,5 @@
+Change Component Footprint: Designator=J1 Old Footprint=FP-0430450600-MFG New Footprint=FP-0430450600-MFG
+Change Component Comment : Designator=C1 Old Comment=C0805C105K4PACTU New Comment=1uF
+Change Class Name : Old Net Name=Sheet1 New Net Name=MAIN
+Added Rule: Name=Schematic Supply Nets
+Added Rule: Name=Schematic Supply Nets_1
