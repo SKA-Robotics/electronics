@@ -1,0 +1,24 @@
+Output: Gerber X2 Files
+Type  : GerberX2
+From  : Variant [[No Variations]] of Project [MPS_PSU_Eval.PrjPcb]
+   Generated File[MPS_PSU_Eval_Copper_Signal_Top.gbr]
+   Generated File[MPS_PSU_Eval_Copper_Plane_1.gbr]
+   Generated File[MPS_PSU_Eval_Copper_Plane_2.gbr]
+   Generated File[MPS_PSU_Eval_Copper_Signal_Bot.gbr]
+   Generated File[MPS_PSU_Eval_Legend_Top.gbr]
+   Generated File[MPS_PSU_Eval_Legend_Bot.gbr]
+   Generated File[MPS_PSU_Eval_Soldermask_Top.gbr]
+   Generated File[MPS_PSU_Eval_Soldermask_Bot.gbr]
+   Generated File[MPS_PSU_Eval_Paste_Top.gbr]
+   Generated File[MPS_PSU_Eval_Paste_Bot.gbr]
+   Generated File[MPS_PSU_Eval_Profile.gbr]
+   Generated File[MPS_PSU_Eval_NPTH_Drill.gbr]
+   Generated File[MPS_PSU_Eval_PTH_Drill.gbr]
+   Generated File[MPS_PSU_Eval.EXTREP]
+   Generated File[MPS_PSU_Eval.REP]
+
+
+Files Generated   : 15
+Documents Printed : 0
+
+Finished Output Generation At 07:20:17 On 07.01.2025
