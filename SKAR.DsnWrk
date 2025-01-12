@@ -6,3 +6,6 @@ ProjectPath=Encoder v1\Source\Encoder_v1.PrjPcb
 ProjectPath=Encoder v2\Source\Encoder_v2.PrjPcb
 [Project3]
 ProjectPath=Encoder v2.1\Source\Encoder_v2.1.PrjPcb
+[Project4]
+ProjectPath=MPS_PSU_Eval\Source\MPS_PSU_Eval.PrjPcb
+
