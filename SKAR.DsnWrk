@@ -4,3 +4,5 @@ Version=1.0
 ProjectPath=Encoder v1\Source\Encoder.PrjPcb
 [Project2]
 ProjectPath=Battery\Source\Battery_Module.PrjPcb
+[Project3]
+ProjectPath=..\..\Power_battery\Power_battery.PrjPcb
