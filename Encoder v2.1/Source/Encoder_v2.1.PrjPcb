@@ -152,111 +152,55 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for Encoder_v2\Design Rule Check - Encoder_v2.html
-DItemRevisionGUID=
-
-[GeneratedDocument2]
 DocumentPath=Project Outputs for Encoder_v2.1\Encoder_v2.1.EXTREP
 DItemRevisionGUID=
 
-[GeneratedDocument3]
+[GeneratedDocument2]
 DocumentPath=Project Outputs for Encoder_v2.1\Encoder_v2.1.REP
 DItemRevisionGUID=
 
-[GeneratedDocument4]
+[GeneratedDocument3]
 DocumentPath=Project Outputs for Encoder_v2.1\Encoder_v2.1_Copper_Signal_Bot.gbr
 DItemRevisionGUID=
 
-[GeneratedDocument5]
+[GeneratedDocument4]
 DocumentPath=Project Outputs for Encoder_v2.1\Encoder_v2.1_Copper_Signal_Top.gbr
 DItemRevisionGUID=
 
-[GeneratedDocument6]
+[GeneratedDocument5]
 DocumentPath=Project Outputs for Encoder_v2.1\Encoder_v2.1_Legend_Bot.gbr
 DItemRevisionGUID=
 
-[GeneratedDocument7]
+[GeneratedDocument6]
 DocumentPath=Project Outputs for Encoder_v2.1\Encoder_v2.1_Legend_Top.gbr
 DItemRevisionGUID=
 
-[GeneratedDocument8]
+[GeneratedDocument7]
 DocumentPath=Project Outputs for Encoder_v2.1\Encoder_v2.1_NPTH_Drill.gbr
 DItemRevisionGUID=
 
-[GeneratedDocument9]
+[GeneratedDocument8]
 DocumentPath=Project Outputs for Encoder_v2.1\Encoder_v2.1_Paste_Bot.gbr
 DItemRevisionGUID=
 
-[GeneratedDocument10]
+[GeneratedDocument9]
 DocumentPath=Project Outputs for Encoder_v2.1\Encoder_v2.1_Paste_Top.gbr
 DItemRevisionGUID=
 
-[GeneratedDocument11]
+[GeneratedDocument10]
 DocumentPath=Project Outputs for Encoder_v2.1\Encoder_v2.1_Profile.gbr
 DItemRevisionGUID=
 
-[GeneratedDocument12]
+[GeneratedDocument11]
 DocumentPath=Project Outputs for Encoder_v2.1\Encoder_v2.1_PTH_Drill.gbr
 DItemRevisionGUID=
 
-[GeneratedDocument13]
+[GeneratedDocument12]
 DocumentPath=Project Outputs for Encoder_v2.1\Encoder_v2.1_Soldermask_Bot.gbr
 DItemRevisionGUID=
 
-[GeneratedDocument14]
+[GeneratedDocument13]
 DocumentPath=Project Outputs for Encoder_v2.1\Encoder_v2.1_Soldermask_Top.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument15]
-DocumentPath=Project Outputs for Encoder_v2\Encoder_v2.EXTREP
-DItemRevisionGUID=
-
-[GeneratedDocument16]
-DocumentPath=Project Outputs for Encoder_v2\Encoder_v2.REP
-DItemRevisionGUID=
-
-[GeneratedDocument17]
-DocumentPath=Project Outputs for Encoder_v2\Encoder_v2_Copper_Signal_Bot.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument18]
-DocumentPath=Project Outputs for Encoder_v2\Encoder_v2_Copper_Signal_Top.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument19]
-DocumentPath=Project Outputs for Encoder_v2\Encoder_v2_Legend_Bot.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument20]
-DocumentPath=Project Outputs for Encoder_v2\Encoder_v2_Legend_Top.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument21]
-DocumentPath=Project Outputs for Encoder_v2\Encoder_v2_NPTH_Drill.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument22]
-DocumentPath=Project Outputs for Encoder_v2\Encoder_v2_Paste_Bot.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument23]
-DocumentPath=Project Outputs for Encoder_v2\Encoder_v2_Paste_Top.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument24]
-DocumentPath=Project Outputs for Encoder_v2\Encoder_v2_Profile.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument25]
-DocumentPath=Project Outputs for Encoder_v2\Encoder_v2_PTH_Drill.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument26]
-DocumentPath=Project Outputs for Encoder_v2\Encoder_v2_Soldermask_Bot.gbr
-DItemRevisionGUID=
-
-[GeneratedDocument27]
-DocumentPath=Project Outputs for Encoder_v2\Encoder_v2_Soldermask_Top.gbr
 DItemRevisionGUID=
 
 [Configuration1]
