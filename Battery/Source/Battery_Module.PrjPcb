@@ -134,6 +134,10 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QGVIVRYM
 
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Battery_Module\Design Rule Check - Battery_Module.html
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
