@@ -58,6 +58,17 @@ To terminate bus with a 120 Ω resistor connect two pins between Micro-Fit and U
 CANduino can be programmed using USB-C port.
 Programming is the same as in Arduino.
 
+### Pins 
+Side pins enable to get access to most of ATmega pins.  
+For more information about pin mapping read Arduino documentation: [link](https://docs.arduino.cc/retired/hacking/hardware/PinMapping32u4/)
+#### Analog pins
+Analog pins are marked with letter "A", e.g "A1".
+#### Digital pins
+Digital pins are marked with numbers, e.g "12".
+#### PWM pins
+PWM pins are marked with leading ".", e.g ".3".
+
+### CAN module
 To communicate via CAN bus you can use the Arduino CAN library. Full documentation:
 [Repository](https://github.com/sandeepmistry/arduino-CAN)
 
