@@ -86,5 +86,5 @@ Wiring in CANduino is traced as default.
 
 # Credits
 Designed by Selim Mucharski and Jakub Bawej.  
-Graphic designer - Tomasz Żebrowski.
+Graphic designer - Tomasz Żebrowski.  
 Special thanks for Michał Gołąb and Adam Jeliński for support.
