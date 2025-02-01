@@ -51,6 +51,9 @@ Check current standard here: [Repository](https://github.com/SKA-Robotics/electr
 |-    |-    |
 | GND | +5V |
 
+### 120 Ω resistor 
+To terminate bus with a 120 Ω resistor connect two pins between Micro-Fit and USB-C port using jumper. 
+
 ## Programming
 CANduino can be programmed using USB-C port.
 Programming is the same as in Arduino.
