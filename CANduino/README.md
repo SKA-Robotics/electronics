@@ -16,6 +16,7 @@ Height: 0.63mm (board) + 10.29mm (Micro-Fit) = 10,92mm (total)
 ### 3D view
 ![Isometric](Images/3D%20view%20-%20isometric.png)
 ![Top](Images/3D%20view%20-%20top.png)
+![Bottom](Images/3D%20view%20-%20bottom.png)
 ![Side](Images/3D%20view%20-%20side.png)
 
 ## LED description
