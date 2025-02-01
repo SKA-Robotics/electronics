@@ -28,7 +28,7 @@ There are 3 LEDs on board:
 
 ## Power supply
 Board works on 5V.
-Can be powered by USB-C port or CAN bus (better not at the same time)
+Can be powered by USB-C port, CAN bus or 5V pin (better not at the same time)
 
 ## CAN bus
 CANduino is using MCP2515 controller with MCP2544FD transceiver during CAN communication. MCP2515 implements the CAN specification, Version 2.0B.
