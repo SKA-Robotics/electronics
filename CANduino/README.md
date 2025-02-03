@@ -19,6 +19,29 @@ Height: 0.63mm (board) + 10.29mm (Micro-Fit) = 10,92mm (total)
 ![Bottom](Images/3D%20view%20-%20bottom.png)
 ![Side](Images/3D%20view%20-%20side.png)
 
+### Pinout
+|Pin No.|Pin name|Pin No.|Pin name|
+|-  |-      |-  |-  |
+|1  |+5     |34 |GND|
+|2  |MOSI   |33 |+5|
+|3  |SCK    |32 |SS/17|
+|4  |MISO   |31 |+5|
+|5  |RST    |30 |7|
+|6  |GND    |29 |GND|
+|7  |2      |28 |AREF|
+|8  |.11    |27 |A5|
+|9  |.3     |26 |A4|
+|10 |0      |25 |A3|
+|11 |1      |24 |A2|
+|12 |TXLED  |23 |A1|
+|13 |4      |22 |A0|
+|14 |12     |21 |HBW|
+|15 |.6     |20 |CSCAN D10|
+|16 |8      |19 |13.|
+|17 |.9     |18 |5.|
+
+For more information about using pins in program see [here](#pins).
+
 ## LED description
 There are 3 LEDs on board:
 - ${\color{red}Red}$ - PWR (board is powered)
@@ -44,7 +67,7 @@ CAN controller bitrate: 1 Mb/s
 Pinout is compatible with "Sirius 2 standard".
 Check current standard here: [Repository](https://github.com/SKA-Robotics/electronics/blob/main/Manipulator%20Harness/README.md)
 
-#### Pinout used in CANduino
+#### MicroFit pinout used in CANduino
 
 ![MicroFit](Images/MicroFit.png)
 
