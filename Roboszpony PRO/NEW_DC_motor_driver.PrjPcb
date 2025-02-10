@@ -84,6 +84,23 @@ GenerateClassCluster=0
 DocumentUniqueId=OHEPUMJX
 
 [Document3]
+DocumentPath=..\A4957SESTR-T.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=VOQSUELT
+
+[Document4]
 DocumentPath=Libraries\1708004.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -100,7 +117,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=AHFUGYTC
 
-[Document4]
+[Document5]
 DocumentPath=Libraries\1708004.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -117,7 +134,24 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=AJAFDIZH
 
-[Document5]
+[Document6]
+DocumentPath=..\A4957SESTR-T.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=RNDDLGUB
+
+[Document7]
 DocumentPath=Libraries\1815125.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -134,7 +168,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=BFRVWICE
 
-[Document6]
+[Document8]
 DocumentPath=Libraries\1815125.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -151,7 +185,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=BYMRNZVS
 
-[Document7]
+[Document9]
 DocumentPath=Libraries\1814935.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -168,7 +202,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=TNFQFEVR
 
-[Document8]
+[Document10]
 DocumentPath=Libraries\1814935.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -185,7 +219,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=HDLYVPLU
 
-[Document9]
+[Document11]
 DocumentPath=Libraries\PTSM.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -202,7 +236,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document10]
+[Document12]
 DocumentPath=Libraries\PTSM.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -219,7 +253,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document11]
+[Document13]
 DocumentPath=Libraries\1814951.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -236,7 +270,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=DQOHSFOS
 
-[Document12]
+[Document14]
 DocumentPath=Libraries\1814951.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
