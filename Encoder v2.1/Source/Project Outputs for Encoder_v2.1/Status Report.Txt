@@ -1,0 +1,22 @@
+Output: Gerber X2 Files
+Type  : GerberX2
+From  : Variant [[No Variations]] of Project [Encoder_v2.1.PrjPcb]
+   Generated File[Encoder_v2.1_Copper_Signal_Top.gbr]
+   Generated File[Encoder_v2.1_Copper_Signal_Bot.gbr]
+   Generated File[Encoder_v2.1_Legend_Top.gbr]
+   Generated File[Encoder_v2.1_Legend_Bot.gbr]
+   Generated File[Encoder_v2.1_Soldermask_Top.gbr]
+   Generated File[Encoder_v2.1_Soldermask_Bot.gbr]
+   Generated File[Encoder_v2.1_Paste_Top.gbr]
+   Generated File[Encoder_v2.1_Paste_Bot.gbr]
+   Generated File[Encoder_v2.1_Profile.gbr]
+   Generated File[Encoder_v2.1_NPTH_Drill.gbr]
+   Generated File[Encoder_v2.1_PTH_Drill.gbr]
+   Generated File[Encoder_v2.1.EXTREP]
+   Generated File[Encoder_v2.1.REP]
+
+
+Files Generated   : 13
+Documents Printed : 0
+
+Finished Output Generation At 17:58:57 On 06.01.2025
