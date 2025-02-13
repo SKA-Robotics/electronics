@@ -37,8 +37,8 @@ Height: 0.63mm (board) + 10.29mm (Micro-Fit) = 10,92mm (total)
 |13 |4      |22 |A0|
 |14 |12     |21 |HBW|
 |15 |.6     |20 |CSCAN D10|
-|16 |8      |19 |13.|
-|17 |.9     |18 |5.|
+|16 |8      |19 |.13|
+|17 |.9     |18 |.5|
 
 For more information about using pins in program see [here](#pins).
 
@@ -107,6 +107,10 @@ Wiring in CANduino is traced as default.
 | SI | MOSI |
 | CS | 10 |
 | INT | 2 |
+
+# Use CANduino in your project
+To use CANduino in your project you can import [CANduinoLib](CANduinoLib/) library to your Altium Designer project.
+Footprint is compatible with [299-017-299198-1 EDAC](https://www.tme.eu/pl/en/details/299-017-299198-1/board-to-board-connectors/edac/) connector.
 
 # Credits
 Designed by Selim Mucharski and Jakub Bawej.  
