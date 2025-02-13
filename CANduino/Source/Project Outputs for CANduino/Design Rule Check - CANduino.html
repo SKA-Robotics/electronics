@@ -1,0 +1,705 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD22\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">06.01.2025</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">17:43:12</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///D:\electronics\CANduino\Source\CANduino.PcbDoc" class="file"><acronym title="D:\electronics\CANduino\Source\CANduino.PcbDoc">D:\electronics\CANduino\Source\CANduino.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">7</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Waived Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">101</td></tr>
+</table>
+</td>
+</table><a name="IDDKC2BOLZ2APAHFKATB1BJQBUUJU0M0EMVQD4BGFRF4JXDPQZLGHO"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTEDEZXKQKDHCTMCOFIJ0JZ4ODZ2EVKPSI1CZOKOW1PEAKG0P0D">Clearance Constraint (Gap=0.12mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1C0Q10KWFSX3P33EMAS1Q4GTVMWTJHVCRHQYELIBRFMPHVUAKKBL">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1C5SJG5GMDP3HJHTXXYKROC0NDCFVEQLA3OMIAM3XWCJRP1VJ5TL">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID3IFE0E53YVIVDLQU5JUCFSRPOGQBDHG15G4BOUCGFWVOKZF151UJ">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4PPJ5ZDYVD1VCZDMFQCA5TRBKID3A451PWGSMFH1QE4QQCKFEAID">Width Constraint (Min=0.16mm) (Max=0.254mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMWTFDX44GJSDDY2V3RHBCDJ0BKBOJTEKL1REMPIZU4PZL0NMNVTJ">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDK40NO1TLFGSBOIDJGVMGEQ1YKPXOFKU33OQVT2L3HRSIE3N4MUQH">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMETYGE53FFXPCF32JJ3WO2K3MGHDFS350D1VNOICL3F4BERQOFZM">Minimum Annular Ring (Minimum=0.025mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBMW4GIMV5Y3YOJUI2RI2FMGBNJVFCBN5CUBP4RLSC01ZYRCHB5FF">Hole Size Constraint (Min=0.15mm) (Max=6.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJ4VQ4EXNEOBWGZAFNZJN04WOEKFMP0MNG3LWL3IFSUAE0KRE0D3B">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEQASFGVLLECZLYWNMFRJ51ONJIYMDC4HQ4I35XLP25NI2ZKZ432C">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDF0TUPEKQPY2VKFSQK01IU4YTZO1KIZXTR0FYMFMUBWK5RKDICV3F">Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDLPGMGMI3BVQRJROMQJCNDHNL3BLP3LEWG3W1LHJZ3DZHSJYYZGMJ">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5AK5KO2W3BCTOLPCTRBAZRUHIDCOS14OVRKOLIJBV0PDSUFRYNAI">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHLLHGLIZKQMZJCUEWI4DRGB4UNZKWBWTCBGIXCBJB5VKIHMXGLBM">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDENAEDIPBFXYKCJUGDR1AMLQFSHMAQLHQBDQKG0MA4CCI2Q2SGYBF">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">7</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Waived Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPZUHQNRCYKNLOGU44WJ0U1MORMY03ZD25A5JJ0JC505NLH0B0M3O">Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)</a></td>
+<td class="column2">5</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQUPGZDBACYCNJHI01UYJ0LNKXGYGP3B2D0HOGIOAV1JQCMP1VFJ">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">26</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDR0IP1FB4R11QIE2ILISWMH5GGGSUBB3JVHRJ20HXRQIIQYRLR1IP">Board Clearance Constraint (Gap=0mm) (All)</a></td>
+<td class="column2">70</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">101</td>
+</tr>
+</table><br><a name="IDG5HPEVOITOBAEKUZCWSB5OWKPM1HJLEILIRJ1YBQQ1J4YF1XV3VP"><h2>Rule Violations</h2></a><a name="ID1C5SJG5GMDP3HJHTXXYKROC0NDCFVEQLA3OMIAM3XWCJRP1VJ5TL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=571.142mil|Location2.X=834.921mil|Location1.Y=1994.921mil|Location2.Y=2300.039mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=571.142mil|Location2.X=834.921mil|Location1.Y=1994.921mil|Location2.Y=2300.039mil|Absolute=True">Un-Routed Net Constraint: Polygon  (NONET_L-01_P-001) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1343.77mil|Location2.X=1682.353mil|Location1.Y=1859.004mil|Location2.Y=2197.586mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1343.77mil|Location2.X=1682.353mil|Location1.Y=1859.004mil|Location2.Y=2197.586mil|Absolute=True">Un-Routed Net Constraint: Polygon  (NONET_L-01_P-001) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDEQASFGVLLECZLYWNMFRJ51ONJIYMDC4HQ4I35XLP25NI2ZKZ432C"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1543.644mil|Location2.X=1548.831mil|Location1.Y=2025.918mil|Location2.Y=2031.105mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1543.644mil|Location2.X=1548.831mil|Location1.Y=2025.918mil|Location2.Y=2031.105mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.05mm &lt; 0.1mm) Between Region (0 hole(s)) Bottom Solder And Region (0 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.05mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1497.896mil|Location2.X=1503.083mil|Location1.Y=2008.993mil|Location2.Y=2014.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1497.896mil|Location2.X=1503.083mil|Location1.Y=2008.993mil|Location2.Y=2014.18mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.038mm &lt; 0.1mm) Between Region (0 hole(s)) Bottom Solder And Region (1 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.038mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1528.887mil|Location2.X=1534.074mil|Location1.Y=2079.334mil|Location2.Y=2084.521mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1528.887mil|Location2.X=1534.074mil|Location1.Y=2079.334mil|Location2.Y=2084.521mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.068mm &lt; 0.1mm) Between Region (0 hole(s)) Bottom Solder And Region (12 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.068mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1445.816mil|Location2.X=1451.003mil|Location1.Y=2009.065mil|Location2.Y=2014.252mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1445.816mil|Location2.X=1451.003mil|Location1.Y=2009.065mil|Location2.Y=2014.252mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.066mm &lt; 0.1mm) Between Region (1 hole(s)) Bottom Solder And Region (1 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.066mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1396.976mil|Location2.X=1402.163mil|Location1.Y=2009.113mil|Location2.Y=2014.3mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1396.976mil|Location2.X=1402.163mil|Location1.Y=2009.113mil|Location2.Y=2014.3mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.079mm &lt; 0.1mm) Between Region (1 hole(s)) Bottom Solder And Region (12 hole(s)) Bottom Solder [Bottom Solder] Mask Sliver [0.079mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDGLH0CMII3BSECR1EZPBNGQHBEN01KV1MDMQDICCYDLP541DHUCPF"><h2>Waived Violations</h2></a><a name="IDPZUHQNRCYKNLOGU44WJ0U1MORMY03ZD25A5JJ0JC505NLH0B0M3O"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1067.714mil|Location2.X=1074.87mil|Location1.Y=2790.04mil|Location2.Y=2797.196mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1067.714mil|Location2.X=1074.87mil|Location1.Y=2790.04mil|Location2.Y=2797.196mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.076mm &lt; 0.15mm) Between Pad J2-1(1.18mm,29mm) on Multi-Layer And Text "GND" (2.035mm,28.098mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.076mm]</acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:19<br>Can't be improved</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1155.373mil|Location2.X=1162.528mil|Location1.Y=2790.04mil|Location2.Y=2797.196mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1155.373mil|Location2.X=1162.528mil|Location1.Y=2790.04mil|Location2.Y=2797.196mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.076mm &lt; 0.15mm) Between Pad J2-2(3.72mm,29mm) on Multi-Layer And Text "+5" (4.352mm,28.098mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.076mm]</acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:19<br>Can't be improved</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1251.092mil|Location2.X=1258.248mil|Location1.Y=2790.04mil|Location2.Y=2797.196mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1251.092mil|Location2.X=1258.248mil|Location1.Y=2790.04mil|Location2.Y=2797.196mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.076mm &lt; 0.15mm) Between Pad J2-3(6.26mm,29mm) on Multi-Layer And Text "17/SS" (7.543mm,28.007mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.076mm]</acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:19<br>Can't be improved</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1285.728mil|Location2.X=1292.883mil|Location1.Y=2752.295mil|Location2.Y=2759.45mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1285.728mil|Location2.X=1292.883mil|Location1.Y=2752.295mil|Location2.Y=2759.45mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.085mm &lt; 0.15mm) Between Pad J3-SH1(7.1mm,26.71mm) on Multi-Layer And Text "17/SS" (7.543mm,28.007mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.085mm]</acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:19<br>Can't be improved</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1180.857mil|Location2.X=1188.012mil|Location1.Y=1809.37mil|Location2.Y=1816.526mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1180.857mil|Location2.X=1188.012mil|Location1.Y=1809.37mil|Location2.Y=1816.526mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.132mm &lt; 0.15mm) Between Pad J4-5(5mm,4.8mm) on Multi-Layer And Text "MOSI" (2.844mm,2.527mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.132mm]</acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:19<br>Can't be improved</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDQUPGZDBACYCNJHI01UYJ0LNKXGYGP3B2D0HOGIOAV1JQCMP1VFJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Net Antennae (Tolerance=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1410.24mil|Location2.X=1490.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1410.24mil|Location2.X=1490.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True">Net Antennae: Via (11.34mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1410.24mil|Location2.X=1490.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1410.24mil|Location2.X=1490.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True">Net Antennae: Via (11.34mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1610.24mil|Location2.X=1690.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1610.24mil|Location2.X=1690.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True">Net Antennae: Via (16.42mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1710.24mil|Location2.X=1790.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1710.24mil|Location2.X=1790.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True">Net Antennae: Via (18.96mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1710.24mil|Location2.X=1790.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1710.24mil|Location2.X=1790.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True">Net Antennae: Via (18.96mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.24mil|Location2.X=1890.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.24mil|Location2.X=1890.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True">Net Antennae: Via (21.5mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.24mil|Location2.X=1890.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.24mil|Location2.X=1890.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True">Net Antennae: Via (21.5mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1910.24mil|Location2.X=1990.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1910.24mil|Location2.X=1990.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True">Net Antennae: Via (24.04mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1910.24mil|Location2.X=1990.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1910.24mil|Location2.X=1990.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True">Net Antennae: Via (24.04mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2010.24mil|Location2.X=2090.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2010.24mil|Location2.X=2090.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True">Net Antennae: Via (26.58mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2010.24mil|Location2.X=2090.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2010.24mil|Location2.X=2090.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True">Net Antennae: Via (26.58mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110.24mil|Location2.X=2190.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110.24mil|Location2.X=2190.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True">Net Antennae: Via (29.12mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110.24mil|Location2.X=2190.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110.24mil|Location2.X=2190.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True">Net Antennae: Via (29.12mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2210.24mil|Location2.X=2290.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2210.24mil|Location2.X=2290.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True">Net Antennae: Via (31.66mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2210.24mil|Location2.X=2290.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2210.24mil|Location2.X=2290.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True">Net Antennae: Via (31.66mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2310.24mil|Location2.X=2390.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2310.24mil|Location2.X=2390.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True">Net Antennae: Via (34.2mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2310.24mil|Location2.X=2390.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2310.24mil|Location2.X=2390.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True">Net Antennae: Via (34.2mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.24mil|Location2.X=2490.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.24mil|Location2.X=2490.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True">Net Antennae: Via (36.74mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.24mil|Location2.X=2490.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.24mil|Location2.X=2490.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True">Net Antennae: Via (36.74mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.24mil|Location2.X=2590.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.24mil|Location2.X=2590.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True">Net Antennae: Via (39.28mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.24mil|Location2.X=2590.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.24mil|Location2.X=2590.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True">Net Antennae: Via (39.28mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2610.24mil|Location2.X=2690.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2610.24mil|Location2.X=2690.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True">Net Antennae: Via (41.82mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2610.24mil|Location2.X=2690.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2610.24mil|Location2.X=2690.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True">Net Antennae: Via (41.82mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1210.24mil|Location2.X=1290.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1210.24mil|Location2.X=1290.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True">Net Antennae: Via (6.26mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1210.24mil|Location2.X=1290.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1210.24mil|Location2.X=1290.481mil|Location1.Y=2849.177mil|Location2.Y=2978.574mil|Absolute=True">Net Antennae: Via (6.26mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1310.24mil|Location2.X=1390.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1310.24mil|Location2.X=1390.481mil|Location1.Y=1648.39mil|Location2.Y=1777.786mil|Absolute=True">Net Antennae: Via (8.8mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:14:55<br>Part quirk</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDR0IP1FB4R11QIE2ILISWMH5GGGSUBB3JVHRJ20HXRQIIQYRLR1IP"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Board Clearance Constraint (Gap=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2669.729mil|Location2.X=2678.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2669.729mil|Location2.X=2678.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-1(41.82mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1769.729mil|Location2.X=1778.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1769.729mil|Location2.X=1778.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-10(18.96mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1669.729mil|Location2.X=1678.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1669.729mil|Location2.X=1678.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-11(16.42mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1569.729mil|Location2.X=1578.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1569.729mil|Location2.X=1578.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-12(13.88mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1469.729mil|Location2.X=1478.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1469.729mil|Location2.X=1478.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-13(11.34mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1369.729mil|Location2.X=1378.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1369.729mil|Location2.X=1378.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-14(8.8mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1269.729mil|Location2.X=1278.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1269.729mil|Location2.X=1278.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-15(6.26mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1169.729mil|Location2.X=1178.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1169.729mil|Location2.X=1178.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-16(3.72mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1069.729mil|Location2.X=1078.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1069.729mil|Location2.X=1078.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-17(1.18mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2569.729mil|Location2.X=2578.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2569.729mil|Location2.X=2578.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-2(39.28mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2469.729mil|Location2.X=2478.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2469.729mil|Location2.X=2478.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-3(36.74mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2369.729mil|Location2.X=2378.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2369.729mil|Location2.X=2378.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-4(34.2mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2269.729mil|Location2.X=2278.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2269.729mil|Location2.X=2278.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-5(31.66mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2169.729mil|Location2.X=2178.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2169.729mil|Location2.X=2178.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-6(29.12mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2069.729mil|Location2.X=2078.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2069.729mil|Location2.X=2078.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-7(26.58mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1969.729mil|Location2.X=1978.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1969.729mil|Location2.X=1978.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-8(24.04mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1869.729mil|Location2.X=1878.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1869.729mil|Location2.X=1878.853mil|Location1.Y=1678.351mil|Location2.Y=1687.475mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J1-9(21.5mm,1.5mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1010.674mil|Location2.X=1019.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1010.674mil|Location2.X=1019.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-1(1.18mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1910.674mil|Location2.X=1919.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1910.674mil|Location2.X=1919.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-10(24.04mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2010.674mil|Location2.X=2019.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2010.674mil|Location2.X=2019.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-11(26.58mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110.674mil|Location2.X=2119.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110.674mil|Location2.X=2119.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-12(29.12mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2210.674mil|Location2.X=2219.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2210.674mil|Location2.X=2219.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-13(31.66mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2310.674mil|Location2.X=2319.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2310.674mil|Location2.X=2319.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-14(34.2mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.674mil|Location2.X=2419.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2410.674mil|Location2.X=2419.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-15(36.74mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.674mil|Location2.X=2519.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2510.674mil|Location2.X=2519.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-16(39.28mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2610.674mil|Location2.X=2619.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2610.674mil|Location2.X=2619.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-17(41.82mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1110.674mil|Location2.X=1119.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1110.674mil|Location2.X=1119.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-2(3.72mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1210.674mil|Location2.X=1219.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1210.674mil|Location2.X=1219.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-3(6.26mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1310.674mil|Location2.X=1319.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1310.674mil|Location2.X=1319.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-4(8.8mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1410.674mil|Location2.X=1419.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1410.674mil|Location2.X=1419.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-5(11.34mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1510.674mil|Location2.X=1519.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1510.674mil|Location2.X=1519.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-6(13.88mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1610.674mil|Location2.X=1619.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1610.674mil|Location2.X=1619.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-7(16.42mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1710.674mil|Location2.X=1719.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1710.674mil|Location2.X=1719.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-8(18.96mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.674mil|Location2.X=1819.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1810.674mil|Location2.X=1819.798mil|Location1.Y=2879.139mil|Location2.Y=2888.263mil|Absolute=True">Board Outline Clearance(Outline Edge): (0mm &lt; 0.2mm) Between Board Edge And Pad J2-9(21.5mm,29mm) on Multi-Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.639mil|Location2.X=1647.888mil|Location1.Y=1677.082mil|Location2.Y=1683.332mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.639mil|Location2.X=1647.888mil|Location1.Y=1677.082mil|Location2.Y=1683.332mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (16.42mm,0mm)(16.42mm,1.5mm) on Top Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1141.639mil|Location2.X=1147.888mil|Location1.Y=1677.082mil|Location2.Y=1683.332mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1141.639mil|Location2.X=1147.888mil|Location1.Y=1677.082mil|Location2.Y=1683.332mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Track (3.72mm,0mm)(3.72mm,1.5mm) on Top Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1041.639mil|Location2.X=1047.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1041.639mil|Location2.X=1047.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (1.18mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1041.639mil|Location2.X=1047.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1041.639mil|Location2.X=1047.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (1.18mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1441.639mil|Location2.X=1447.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1441.639mil|Location2.X=1447.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (11.34mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1441.639mil|Location2.X=1447.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1441.639mil|Location2.X=1447.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (11.34mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1541.639mil|Location2.X=1547.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1541.639mil|Location2.X=1547.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (13.88mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1541.639mil|Location2.X=1547.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1541.639mil|Location2.X=1547.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (13.88mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.639mil|Location2.X=1647.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.639mil|Location2.X=1647.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (16.42mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.639mil|Location2.X=1647.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.639mil|Location2.X=1647.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (16.42mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1741.639mil|Location2.X=1747.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1741.639mil|Location2.X=1747.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (18.96mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1741.639mil|Location2.X=1747.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1741.639mil|Location2.X=1747.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (18.96mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1841.639mil|Location2.X=1847.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1841.639mil|Location2.X=1847.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (21.5mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1841.639mil|Location2.X=1847.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1841.639mil|Location2.X=1847.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (21.5mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1941.639mil|Location2.X=1947.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1941.639mil|Location2.X=1947.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (24.04mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1941.639mil|Location2.X=1947.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1941.639mil|Location2.X=1947.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (24.04mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2041.639mil|Location2.X=2047.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2041.639mil|Location2.X=2047.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (26.58mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2041.639mil|Location2.X=2047.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2041.639mil|Location2.X=2047.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (26.58mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2141.639mil|Location2.X=2147.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2141.639mil|Location2.X=2147.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (29.12mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2141.639mil|Location2.X=2147.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2141.639mil|Location2.X=2147.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (29.12mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1141.639mil|Location2.X=1147.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1141.639mil|Location2.X=1147.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (3.72mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1141.639mil|Location2.X=1147.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1141.639mil|Location2.X=1147.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (3.72mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.639mil|Location2.X=2247.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.639mil|Location2.X=2247.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (31.66mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.639mil|Location2.X=2247.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2241.639mil|Location2.X=2247.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (31.66mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2341.639mil|Location2.X=2347.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2341.639mil|Location2.X=2347.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (34.2mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2341.639mil|Location2.X=2347.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2341.639mil|Location2.X=2347.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (34.2mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2441.639mil|Location2.X=2447.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2441.639mil|Location2.X=2447.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (36.74mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2441.639mil|Location2.X=2447.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2441.639mil|Location2.X=2447.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (36.74mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2541.639mil|Location2.X=2547.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2541.639mil|Location2.X=2547.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (39.28mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2541.639mil|Location2.X=2547.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2541.639mil|Location2.X=2547.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (39.28mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2641.639mil|Location2.X=2647.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2641.639mil|Location2.X=2647.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (41.82mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2641.639mil|Location2.X=2647.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2641.639mil|Location2.X=2647.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (41.82mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1241.639mil|Location2.X=1247.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1241.639mil|Location2.X=1247.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (6.26mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1241.639mil|Location2.X=1247.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1241.639mil|Location2.X=1247.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (6.26mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1341.639mil|Location2.X=1347.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1341.639mil|Location2.X=1347.888mil|Location1.Y=1664.897mil|Location2.Y=1671.147mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (8.8mm,0mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1341.639mil|Location2.X=1347.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\electronics\CANduino\Source\CANduino.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1341.639mil|Location2.X=1347.888mil|Location1.Y=2895.468mil|Location2.Y=2901.717mil|Absolute=True">Board Outline Clearance(Outline Edge): (Collision &lt; 0.2mm) Between Board Edge And Via (8.8mm,30.5mm) from Top Layer to Bottom Layer </acronym></a><br>Waived by Micha³ Go³¹b at 26.12.2024 16:17:57<br>Part quirk</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
