@@ -12,3 +12,5 @@ ProjectPath=Roboszpon\DC_motor_driver.PrjPcb
 ProjectPath=CANduino\Source\CANduino.PrjPcb
 [Project6]
 ProjectPath=MPS_PSU_Eval\Source\MPS_PSU_Eval.PrjPcb
+[Project7]
+ProjectPath=PC_PSU\PC_PSU.PrjPcb
