@@ -9,6 +9,8 @@ ProjectPath=Encoder v2.1\Source\Encoder_v2.1.PrjPcb
 [Project4]
 ProjectPath=Roboszpon\DC_motor_driver.PrjPcb
 [Project5]
-ProjectPath=CANduino\Source\CANduino.PrjPcb
-[Project6]
 ProjectPath=MPS_PSU_Eval\Source\MPS_PSU_Eval.PrjPcb
+[Project6]
+ProjectPath=CANduino\Source\CANduino.PrjPcb
+[Project7]
+ProjectPath=CANduino\CANduinoLib\CANduino.LibPkg
