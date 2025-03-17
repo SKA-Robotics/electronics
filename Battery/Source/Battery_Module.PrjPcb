@@ -50,23 +50,6 @@ PrefsVaultGUID=
 PrefsRevisionGUID=
 
 [Document1]
-DocumentPath=..\..\..\..\TO228P998X235-3N-2-V.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=JXAHIQBY
-
-[Document2]
 DocumentPath=..\..\..\..\XT+PHOENIX.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -83,24 +66,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=GSBXKYSI
 
-[Document3]
-DocumentPath=..\..\..\..\BatteryModule\Headers.PcbLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=PJDTRTMQ
-
-[Document4]
+[Document2]
 DocumentPath=Battery_Module.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -117,7 +83,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=NIDONSPW
 
-[Document5]
+[Document3]
 DocumentPath=Battery_Module.Annotation
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -134,7 +100,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document6]
+[Document4]
 DocumentPath=Battery_Module.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -150,6 +116,40 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QGVIVRYM
+
+[Document5]
+DocumentPath=..\..\..\..\BatteryModule\Headers.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=PJDTRTMQ
+
+[Document6]
+DocumentPath=..\..\..\..\TO228P998X235-3N-2-V.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=JXAHIQBY
 
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Battery_Module\Design Rule Check - Battery_Module.html
