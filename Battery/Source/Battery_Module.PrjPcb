@@ -64,7 +64,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=GSBXKYSI
 
 [Document2]
 DocumentPath=Battery_Module.SchDoc
@@ -118,7 +118,7 @@ GenerateClassCluster=0
 DocumentUniqueId=QGVIVRYM
 
 [Document5]
-DocumentPath=..\Libraries\Headers.PcbLib
+DocumentPath=..\Libraries\PCB libraries\Headers.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -132,7 +132,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=PJDTRTMQ
 
 [Document6]
 DocumentPath=..\Libraries\TO228P998X235-3N-2-V.PcbLib
@@ -149,7 +149,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=JXAHIQBY
 
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Battery_Module\Design Rule Check - Battery_Module.html
