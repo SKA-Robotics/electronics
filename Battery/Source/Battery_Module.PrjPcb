@@ -151,23 +151,6 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QGVIVRYM
 
-[Document7]
-DocumentPath=Schematics Library.SchLib
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=JLDLCNSR
-
 [GeneratedDocument1]
 DocumentPath=Project Outputs for Battery_Module\Design Rule Check - Battery_Module.html
 DItemRevisionGUID=
