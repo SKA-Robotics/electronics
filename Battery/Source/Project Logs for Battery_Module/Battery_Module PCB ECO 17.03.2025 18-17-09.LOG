@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=J5 NewDesignator=J9
+Added Component: Designator=J5(XT60_FEMALE_PANEL)
+Added Pin To Net: NetName=VIN Pin=J5-1
+Added Pin To Net: NetName=GND Pin=J5-2
+Added Member To Class: ClassName=Battery_Module Member=Component J9 BUTTON
