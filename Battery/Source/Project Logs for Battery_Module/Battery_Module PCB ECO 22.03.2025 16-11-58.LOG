@@ -1,0 +1,7 @@
+Change Component Comment : Designator=J7 Old Comment=ICSP Header New Comment=ICSP
+Added Member To Class: ClassName=Battery_Module Member=Component C8 10uF
+Added Member To Class: ClassName=Battery_Module Member=Component J2 Phoenix
+Added Member To Class: ClassName=Battery_Module Member=Component J3 Phoenix
+Added Member To Class: ClassName=Battery_Module Member=Component J5 XT60
+Added Member To Class: ClassName=Battery_Module Member=Component J6 BUTTON
+Added Member To Class: ClassName=Battery_Module Member=Component J8 UART

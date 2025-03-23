@@ -1,0 +1,9 @@
+Change Component DesignItemId : Designator=U3 Old DesignItemId= New DesignItemId=TLE7274-2D
+Change Component Comment : Designator=J7 Old Comment=ICSP New Comment=
+Change Component Comment : Designator=J8 Old Comment=UART New Comment=
+Change Component Library : Designator=J7 Old Library=Integrated_Library1.IntLib New Library=Uklady_i_zlacza.SchLib
+Change Component Library : Designator=J8 Old Library=Integrated_Library1.IntLib New Library=Uklady_i_zlacza.SchLib
+Change Component Library : Designator=J9 Old Library=Integrated_Library1.IntLib New Library=Uklady_i_zlacza.SchLib
+Added Member To Class: ClassName=Battery_Module Member=Component J7
+Added Member To Class: ClassName=Battery_Module Member=Component J8
+Added Member To Class: ClassName=Battery_Module Member=Component J9 DISPLAY
