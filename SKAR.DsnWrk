@@ -14,3 +14,5 @@ ProjectPath=MPS_PSU_Eval\Source\MPS_PSU_Eval.PrjPcb
 ProjectPath=CANduino\Source\CANduino.PrjPcb
 [Project7]
 ProjectPath=CANduino\CANduinoLib\CANduino.LibPkg
+[Project8]
+ProjectPath=..\..\..\Desktop\Altium projects\enkoder_moteus\Encoder_M_v1.PrjPcb
