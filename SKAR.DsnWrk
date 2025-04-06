@@ -12,3 +12,7 @@ ProjectPath=MPS_PSU_Eval\Source\MPS_PSU_Eval.PrjPcb
 ProjectPath=CANduino\Source\CANduino.PrjPcb
 [Project6]
 ProjectPath=CANduino\CANduinoLib\CANduino.LibPkg
+[Project7]
+ProjectPath=Encoder_M_v1\Source\Encoder_M_v1.PrjPcb
+[Project8]
+ProjectPath=Odrive_output\Source\Odrive_input\Odrive_input.PrjPcb
