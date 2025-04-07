@@ -1,0 +1,62 @@
+Added Component: Designator=J1(PHOENIX_1814948)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "1814948"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "1814948"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "1814948.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J2(PHOENIX_1814948)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "1814948"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "1814948"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "1814948.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J(SAMTEC_TMS-112-54-G-S)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "TMS-112-54-G-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Samtec"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TMS-112-54-G-S"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "SnapEDAsch.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+5 Pin=J-01
+Added Pin To Net: NetName=+5 Pin=J-07
+Added Pin To Net: NetName=+5 Pin=J1-1
+Added Pin To Net: NetName=+5 Pin=J2-1
+Added Net: Name=+5
+Added Pin To Net: NetName=GND Pin=J-06
+Added Pin To Net: NetName=GND Pin=J-12
+Added Pin To Net: NetName=GND Pin=J1-5
+Added Pin To Net: NetName=GND Pin=J2-5
+Added Net: Name=GND
+Added Pin To Net: NetName=M1 ENC A Pin=J-03
+Added Pin To Net: NetName=M1 ENC A Pin=J1-2
+Added Net: Name=M1 ENC A
+Added Pin To Net: NetName=M1 ENC B Pin=J-04
+Added Pin To Net: NetName=M1 ENC B Pin=J1-3
+Added Net: Name=M1 ENC B
+Added Pin To Net: NetName=M1 ENC Z Pin=J-05
+Added Pin To Net: NetName=M1 ENC Z Pin=J1-4
+Added Net: Name=M1 ENC Z
+Added Pin To Net: NetName=M2 ENC A Pin=J-09
+Added Pin To Net: NetName=M2 ENC A Pin=J2-2
+Added Net: Name=M2 ENC A
+Added Pin To Net: NetName=M2 ENC B Pin=J-10
+Added Pin To Net: NetName=M2 ENC B Pin=J2-3
+Added Net: Name=M2 ENC B
+Added Pin To Net: NetName=M2 ENC Z Pin=J-11
+Added Pin To Net: NetName=M2 ENC Z Pin=J2-4
+Added Net: Name=M2 ENC Z
+Added Class: Name=MAIN
+Added Rule: Name=Schematic Supply Nets
+Added Rule: Name=Schematic Supply Nets_1

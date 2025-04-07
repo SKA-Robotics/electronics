@@ -1,0 +1,32 @@
+Removed Pin From Net: NetName=+5 Pin=J-01
+Removed Pin From Net: NetName=M1 ENC A Pin=J-03
+Removed Pin From Net: NetName=M1 ENC B Pin=J-04
+Removed Pin From Net: NetName=M1 ENC Z Pin=J-05
+Removed Pin From Net: NetName=GND Pin=J-06
+Removed Pin From Net: NetName=+5 Pin=J-07
+Removed Pin From Net: NetName=M2 ENC A Pin=J-09
+Removed Pin From Net: NetName=M2 ENC B Pin=J-10
+Removed Pin From Net: NetName=M2 ENC Z Pin=J-11
+Removed Pin From Net: NetName=GND Pin=J-12
+Removed Member From Class: ClassName=MAIN Member=J
+Added Component: Designator=J3(SAMTEC_TSW-112-15-S-S-LL)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Case/Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Design Item ID"; Value = "TSW-112-15-S-S-LL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "TSW-112-15-S-S-LL"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pins"; Value = "12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Source"; Value = "TSW-112-15-S-S-LL.SchLib"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+5 Pin=J3-01
+Added Pin To Net: NetName=M1 ENC A Pin=J3-03
+Added Pin To Net: NetName=M1 ENC B Pin=J3-04
+Added Pin To Net: NetName=M1 ENC Z Pin=J3-05
+Added Pin To Net: NetName=GND Pin=J3-06
+Added Pin To Net: NetName=+5 Pin=J3-07
+Added Pin To Net: NetName=M2 ENC A Pin=J3-09
+Added Pin To Net: NetName=M2 ENC B Pin=J3-10
+Added Pin To Net: NetName=M2 ENC Z Pin=J3-11
+Added Pin To Net: NetName=GND Pin=J3-12
+Added Member To Class: ClassName=MAIN Member=Component J3 TSW-112-15-S-S-LL
