@@ -69,7 +69,7 @@ GenerateClassCluster=0
 DocumentUniqueId=QHFWVMNK
 
 [Document2]
-DocumentPath=Servo CB Upgrade.PcbDoc
+DocumentPath=Servo CB Upgrade_przemieszczenieMolexow.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
