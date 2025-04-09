@@ -2,3 +2,5 @@
 Version=1.0
 [Project1]
 ProjectPath=Servo CB Upgrade\Servo CB Upgrade.PrjPcb
+[Project2]
+ProjectPath=Servo Controller Board\Servo Controller Board.PrjPcb

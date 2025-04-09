@@ -1,0 +1,690 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD24\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10.04.2025</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:49:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc" class="file"><acronym title="C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc">C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">107</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">PCB Health Issues:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+</table>
+</td>
+</table><a name="IDHT3U5QIQXR12NOBKDXAN5YNX4JHF15YG00OMXFJOF4VNWNZVCWSL"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDI4NA1A0HFXSEKZEXXLDSEHDCABCKIBZNJK5TLXPTQ0BMIWKASTNM">Clearance Constraint (Gap=0.127mm) (All),(All)</a></td>
+<td class="column2">30</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDEF4W4OZIIFIZBEJLG5GJO3QOVODREFYCKRUFH4I3K1JWSEJE4LRK">Clearance Constraint (Gap=0.254mm) ((InNet('NetJ4_1') OR InNet('NetJ4_2') OR InNet('NETJ5_1') OR InNet('NetJ5_2') OR InNet('NetF1_1') OR InNet('VM'))),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDL5ATRQ54KCDRPUDQTEL0ZVACTCXF24NHV0XFGHMCNG5HGJTBWSJM">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">48</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID551HABEEZYKAMTST1LYIXZCJEEPPQSM3XBZK1FDT45I0L4IZ4O3N">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">27</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEWLESQB2IYYWJML1JKGAMDTMLPXJAJVY1VJO3MG31IVDBI2BJUOD">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDL0DO3DG0QNJUEVBYEZ3W2TB0BC2WDKVTVBUV4OPJJGGFQQM4G2WP">Width Constraint (Min=0.127mm) (Max=0.5mm) (Preferred=0.2mm) (All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNJNUWIZ0FJ2HECQSSPIFFU0RTEJQWEECM5YR3WLYGYU0MIHHBUC">Width Constraint (Min=0.18mm) (Max=0.5mm) (Preferred=0.18mm) (InNetClass('Voltage'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDABNYPJJJUTC1GVATZ5EIYMEWNETYFOX44LN5VTHM2PDHCDFRPP4I">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUCSJEKB4KNHIGRT0NRWXGCHVAC5OFFN3LABWF5K214FCHGRNMOJ">Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDH0X3X0IHTLJ5EO2VBQTCLFYLEHDGRLX0QCP02SOIY5TEOF25AAGO">Hole Size Constraint (Min=0.025mm) (Max=6.5mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID415VLA1F32V1E42WRNF5J4ALSKOV2DT1YR22FIU32YIOJXBUF2I">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVNF5JD4KZTLMPKQGK1YAWTTM0KNZ1RHN2RYDM0KOF0BENYG0YRNP">Minimum Solder Mask Sliver (Gap=0.08mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0BOG5H1EOWMDDIKE22UZYAMYXNWURMJD3T05TREKM3ZTDEPOHBBI">Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXW32B1S1ZRWKIFFPW510BPDD0P0OBFFCQTHIDEGGDRQFEYJ35BWG">Silk to Silk (Clearance=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDS3OO4QSPIC4THZ3POSLXGR4EBHZQVTG2HBAHMSDUIZRNB5PHMBHF">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDL5GDM5I4H4GSPH0EKBHDMW2RYHA4YZI2IZ51IC0CWZX4TXXRJNH">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">107</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">PCB Health Issues</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><a name="IDI4NA1A0HFXSEKZEXXLDSEHDCABCKIBZNJK5TLXPTQ0BMIWKASTNM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.127mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4012.832mil|Location2.X=4017.166mil|Location1.Y=4150.983mil|Location2.Y=4155.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4012.832mil|Location2.X=4017.166mil|Location1.Y=4150.983mil|Location2.Y=4155.316mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (100.203mm,102.95mm) (101.981mm,105.49mm) on Top Layer And Pad U2-3(101.092mm,104.22mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3977.833mil|Location2.X=3982.167mil|Location1.Y=4100.983mil|Location2.Y=4105.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3977.833mil|Location2.X=3982.167mil|Location1.Y=4100.983mil|Location2.Y=4105.316mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (100.203mm,102.95mm) (101.981mm,105.49mm) on Top Layer And Track (101.092mm,104.22mm)(101.092mm,104.6mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3977.833mil|Location2.X=3982.167mil|Location1.Y=4115.944mil|Location2.Y=4120.277mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3977.833mil|Location2.X=3982.167mil|Location1.Y=4115.944mil|Location2.Y=4120.277mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (100.203mm,102.95mm) (101.981mm,105.49mm) on Top Layer And Track (101.092mm,104.6mm)(102.785mm,106.293mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4112.832mil|Location2.X=4117.166mil|Location1.Y=5535.983mil|Location2.Y=5540.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4112.832mil|Location2.X=4117.166mil|Location1.Y=5535.983mil|Location2.Y=5540.316mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (102.743mm,138.129mm) (104.521mm,140.669mm) on Top Layer And Pad U2-31(103.632mm,139.399mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.832mil|Location2.X=4217.166mil|Location1.Y=5436.983mil|Location2.Y=5441.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4212.832mil|Location2.X=4217.166mil|Location1.Y=5436.983mil|Location2.Y=5441.316mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (105.283mm,138.129mm) (107.061mm,140.669mm) on Top Layer And Pad U2-30(106.172mm,139.424mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4177.833mil|Location2.X=4182.167mil|Location1.Y=5486.983mil|Location2.Y=5491.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4177.833mil|Location2.X=4182.167mil|Location1.Y=5486.983mil|Location2.Y=5491.316mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (105.283mm,138.129mm) (107.061mm,140.669mm) on Top Layer And Track (106.172mm,139.424mm)(106.172mm,139.804mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4177.833mil|Location2.X=4182.167mil|Location1.Y=5501.944mil|Location2.Y=5506.277mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4177.833mil|Location2.X=4182.167mil|Location1.Y=5501.944mil|Location2.Y=5506.277mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (105.283mm,138.129mm) (107.061mm,140.669mm) on Top Layer And Track (106.172mm,139.804mm)(107.428mm,141.061mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4712.832mil|Location2.X=4717.166mil|Location1.Y=4150.983mil|Location2.Y=4155.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4712.832mil|Location2.X=4717.166mil|Location1.Y=4150.983mil|Location2.Y=4155.316mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Pad U2-10(118.872mm,104.22mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4642.832mil|Location2.X=4647.166mil|Location1.Y=4150.945mil|Location2.Y=4155.278mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4642.832mil|Location2.X=4647.166mil|Location1.Y=4150.945mil|Location2.Y=4155.278mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (108.312mm,115.16mm)(118.872mm,104.6mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4677.833mil|Location2.X=4682.167mil|Location1.Y=4086.022mil|Location2.Y=4090.356mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4677.833mil|Location2.X=4682.167mil|Location1.Y=4086.022mil|Location2.Y=4090.356mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (118.872mm,103.84mm)(118.872mm,104.22mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4677.833mil|Location2.X=4682.167mil|Location1.Y=4086.022mil|Location2.Y=4090.356mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4677.833mil|Location2.X=4682.167mil|Location1.Y=4086.022mil|Location2.Y=4090.356mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (118.872mm,103.84mm)(120.778mm,101.934mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4677.833mil|Location2.X=4682.167mil|Location1.Y=4100.983mil|Location2.Y=4105.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4677.833mil|Location2.X=4682.167mil|Location1.Y=4100.983mil|Location2.Y=4105.316mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (118.872mm,104.22mm)(118.872mm,104.6mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.832mil|Location2.X=4817.166mil|Location1.Y=4150.983mil|Location2.Y=4155.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4812.832mil|Location2.X=4817.166mil|Location1.Y=4150.983mil|Location2.Y=4155.316mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Pad U2-11(121.412mm,104.22mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4777.833mil|Location2.X=4782.167mil|Location1.Y=4086.022mil|Location2.Y=4090.356mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4777.833mil|Location2.X=4782.167mil|Location1.Y=4086.022mil|Location2.Y=4090.356mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Track (121.412mm,103.84mm)(121.412mm,104.22mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4777.833mil|Location2.X=4782.167mil|Location1.Y=4086.022mil|Location2.Y=4090.356mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4777.833mil|Location2.X=4782.167mil|Location1.Y=4086.022mil|Location2.Y=4090.356mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Track (121.412mm,103.84mm)(122.689mm,102.563mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4777.833mil|Location2.X=4782.167mil|Location1.Y=4100.983mil|Location2.Y=4105.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4777.833mil|Location2.X=4782.167mil|Location1.Y=4100.983mil|Location2.Y=4105.316mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Track (121.412mm,104.22mm)(121.412mm,106.887mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5212.832mil|Location2.X=5217.166mil|Location1.Y=4150.983mil|Location2.Y=4155.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5212.832mil|Location2.X=5217.166mil|Location1.Y=4150.983mil|Location2.Y=4155.316mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (130.683mm,102.95mm) (132.461mm,105.49mm) on Top Layer And Pad U2-15(131.572mm,104.22mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5177.833mil|Location2.X=5182.167mil|Location1.Y=4100.983mil|Location2.Y=4105.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5177.833mil|Location2.X=5182.167mil|Location1.Y=4100.983mil|Location2.Y=4105.316mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (130.683mm,102.95mm) (132.461mm,105.49mm) on Top Layer And Track (131.572mm,104.22mm)(131.572mm,104.6mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3912.832mil|Location2.X=3917.166mil|Location1.Y=4150.983mil|Location2.Y=4155.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3912.832mil|Location2.X=3917.166mil|Location1.Y=4150.983mil|Location2.Y=4155.316mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (97.663mm,102.95mm) (99.441mm,105.49mm) on Top Layer And Pad U2-2(98.552mm,104.22mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3877.833mil|Location2.X=3882.167mil|Location1.Y=4100.983mil|Location2.Y=4105.316mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3877.833mil|Location2.X=3882.167mil|Location1.Y=4100.983mil|Location2.Y=4105.316mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (97.663mm,102.95mm) (99.441mm,105.49mm) on Top Layer And Track (98.552mm,104.22mm)(98.552mm,104.6mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3877.833mil|Location2.X=3882.167mil|Location1.Y=4115.944mil|Location2.Y=4120.277mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3877.833mil|Location2.X=3882.167mil|Location1.Y=4115.944mil|Location2.Y=4120.277mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.127mm) Between Area Fill (97.663mm,102.95mm) (99.441mm,105.49mm) on Top Layer And Track (98.552mm,104.6mm)(99.949mm,105.997mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4757.663mil|Location2.X=4765.329mil|Location1.Y=4794.631mil|Location2.Y=4802.298mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4757.663mil|Location2.X=4765.329mil|Location1.Y=4794.631mil|Location2.Y=4802.298mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U1-17(120.942mm,122.381mm) on Bottom Layer And Pad U1-27(120.942mm,121.881mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4757.663mil|Location2.X=4765.329mil|Location1.Y=4834.001mil|Location2.Y=4841.668mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4757.663mil|Location2.X=4765.329mil|Location1.Y=4834.001mil|Location2.Y=4841.668mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U1-17(120.942mm,122.381mm) on Bottom Layer And Pad U1-28(120.942mm,122.881mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4799.986mil|Location2.X=4807.652mil|Location1.Y=4794.631mil|Location2.Y=4802.298mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4799.986mil|Location2.X=4807.652mil|Location1.Y=4794.631mil|Location2.Y=4802.298mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U1-18(122.017mm,122.381mm) on Bottom Layer And Pad U1-23(122.017mm,121.881mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4799.986mil|Location2.X=4807.652mil|Location1.Y=4834.001mil|Location2.Y=4841.668mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4799.986mil|Location2.X=4807.652mil|Location1.Y=4834.001mil|Location2.Y=4841.668mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U1-18(122.017mm,122.381mm) on Bottom Layer And Pad U1-24(122.017mm,122.881mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4842.348mil|Location2.X=4850.014mil|Location1.Y=4794.631mil|Location2.Y=4802.298mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4842.348mil|Location2.X=4850.014mil|Location1.Y=4794.631mil|Location2.Y=4802.298mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U1-19(123.093mm,122.381mm) on Bottom Layer And Pad U1-21(123.093mm,121.881mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4842.348mil|Location2.X=4850.014mil|Location1.Y=4834.001mil|Location2.Y=4841.668mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4842.348mil|Location2.X=4850.014mil|Location1.Y=4834.001mil|Location2.Y=4841.668mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U1-19(123.093mm,122.381mm) on Bottom Layer And Pad U1-22(123.093mm,122.881mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4843.056mil|Location2.X=4849.306mil|Location1.Y=4815.025mil|Location2.Y=4821.274mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4843.056mil|Location2.X=4849.306mil|Location1.Y=4815.025mil|Location2.Y=4821.274mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.2mm) Between Pad U1-19(123.093mm,122.381mm) on Bottom Layer And Track (123.093mm,122.381mm)(123.305mm,122.169mm) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4884.671mil|Location2.X=4892.337mil|Location1.Y=4794.631mil|Location2.Y=4802.298mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4884.671mil|Location2.X=4892.337mil|Location1.Y=4794.631mil|Location2.Y=4802.298mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U1-20(124.168mm,122.381mm) on Bottom Layer And Pad U1-25(124.168mm,121.881mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4884.671mil|Location2.X=4892.337mil|Location1.Y=4834.001mil|Location2.Y=4841.668mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4884.671mil|Location2.X=4892.337mil|Location1.Y=4834.001mil|Location2.Y=4841.668mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.254mm) Between Pad U1-20(124.168mm,122.381mm) on Bottom Layer And Pad U1-26(124.168mm,122.881mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDL5ATRQ54KCDRPUDQTEL0ZVACTCXF24NHV0XFGHMCNG5HGJTBWSJM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Short-Circuit Constraint (Allowed=No) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3917.474mil|Location2.X=4042.524mil|Location1.Y=4040.633mil|Location2.Y=4165.684mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3917.474mil|Location2.X=4042.524mil|Location1.Y=4040.633mil|Location2.Y=4165.684mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (100.203mm,102.95mm) (101.981mm,105.49mm) on Top Layer And Pad U2-3(101.092mm,104.22mm) on Top Layer Location : [X = 101.092mm][Y = 104.22mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3964.928mil|Location2.X=3995.072mil|Location1.Y=4095.558mil|Location2.Y=4125.702mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3964.928mil|Location2.X=3995.072mil|Location1.Y=4095.558mil|Location2.Y=4125.702mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (100.203mm,102.95mm) (101.981mm,105.49mm) on Top Layer And Track (101.092mm,104.22mm)(101.092mm,104.6mm) on Top Layer Location : [X = 101.092mm][Y = 104.41mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3965.077mil|Location2.X=4024.824mil|Location1.Y=4103.216mil|Location2.Y=4162.963mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3965.077mil|Location2.X=4024.824mil|Location1.Y=4103.216mil|Location2.Y=4162.963mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (100.203mm,102.95mm) (101.981mm,105.49mm) on Top Layer And Track (101.092mm,104.6mm)(102.785mm,106.293mm) on Top Layer Location : [X = 101.472mm][Y = 104.98mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4017.474mil|Location2.X=4142.525mil|Location1.Y=5425.633mil|Location2.Y=5550.684mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4017.474mil|Location2.X=4142.525mil|Location1.Y=5425.633mil|Location2.Y=5550.684mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (102.743mm,138.129mm) (104.521mm,140.669mm) on Top Layer And Pad U2-31(103.632mm,139.399mm) on Top Layer Location : [X = 103.632mm][Y = 139.399mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4117.868mil|Location2.X=4242.13mil|Location1.Y=5426.527mil|Location2.Y=5550.789mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4117.868mil|Location2.X=4242.13mil|Location1.Y=5426.527mil|Location2.Y=5550.789mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (105.283mm,138.129mm) (107.061mm,140.669mm) on Top Layer And Pad U2-30(106.172mm,139.424mm) on Top Layer Location : [X = 106.172mm][Y = 139.412mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4164.928mil|Location2.X=4195.072mil|Location1.Y=5481.558mil|Location2.Y=5511.702mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4164.928mil|Location2.X=4195.072mil|Location1.Y=5481.558mil|Location2.Y=5511.702mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (105.283mm,138.129mm) (107.061mm,140.669mm) on Top Layer And Track (106.172mm,139.424mm)(106.172mm,139.804mm) on Top Layer Location : [X = 106.172mm][Y = 139.614mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4165.429mil|Location2.X=4224.472mil|Location1.Y=5489.068mil|Location2.Y=5548.111mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4165.429mil|Location2.X=4224.472mil|Location1.Y=5489.068mil|Location2.Y=5548.111mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (105.283mm,138.129mm) (107.061mm,140.669mm) on Top Layer And Track (106.172mm,139.804mm)(107.428mm,141.061mm) on Top Layer Location : [X = 106.552mm][Y = 140.172mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4617.474mil|Location2.X=4742.525mil|Location1.Y=4040.633mil|Location2.Y=4165.684mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4617.474mil|Location2.X=4742.525mil|Location1.Y=4040.633mil|Location2.Y=4165.684mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Pad U2-10(118.872mm,104.22mm) on Top Layer Location : [X = 118.872mm][Y = 104.22mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4635.174mil|Location2.X=4694.923mil|Location1.Y=4103.216mil|Location2.Y=4162.964mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4635.174mil|Location2.X=4694.923mil|Location1.Y=4103.216mil|Location2.Y=4162.964mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (108.312mm,115.16mm)(118.872mm,104.6mm) on Top Layer Location : [X = 118.492mm][Y = 104.98mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4664.928mil|Location2.X=4695.072mil|Location1.Y=4080.597mil|Location2.Y=4110.741mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4664.928mil|Location2.X=4695.072mil|Location1.Y=4080.597mil|Location2.Y=4110.741mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (118.872mm,103.84mm)(118.872mm,104.22mm) on Top Layer Location : [X = 118.872mm][Y = 104.03mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4665.09mil|Location2.X=4724.811mil|Location1.Y=4043.366mil|Location2.Y=4103.088mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4665.09mil|Location2.X=4724.811mil|Location1.Y=4043.366mil|Location2.Y=4103.088mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (118.872mm,103.84mm)(120.778mm,101.934mm) on Top Layer Location : [X = 119.252mm][Y = 103.46mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4664.928mil|Location2.X=4695.072mil|Location1.Y=4095.558mil|Location2.Y=4125.702mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4664.928mil|Location2.X=4695.072mil|Location1.Y=4095.558mil|Location2.Y=4125.702mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (118.872mm,104.22mm)(118.872mm,104.6mm) on Top Layer Location : [X = 118.872mm][Y = 104.41mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4717.474mil|Location2.X=4842.525mil|Location1.Y=4040.633mil|Location2.Y=4165.684mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4717.474mil|Location2.X=4842.525mil|Location1.Y=4040.633mil|Location2.Y=4165.684mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Pad U2-11(121.412mm,104.22mm) on Top Layer Location : [X = 121.412mm][Y = 104.22mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4764.928mil|Location2.X=4795.072mil|Location1.Y=4080.597mil|Location2.Y=4110.741mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4764.928mil|Location2.X=4795.072mil|Location1.Y=4080.597mil|Location2.Y=4110.741mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Track (121.412mm,103.84mm)(121.412mm,104.22mm) on Top Layer Location : [X = 121.412mm][Y = 104.03mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4765.09mil|Location2.X=4824.811mil|Location1.Y=4043.366mil|Location2.Y=4103.088mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4765.09mil|Location2.X=4824.811mil|Location1.Y=4043.366mil|Location2.Y=4103.088mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Track (121.412mm,103.84mm)(122.689mm,102.563mm) on Top Layer Location : [X = 121.792mm][Y = 103.46mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4750.475mil|Location2.X=4809.525mil|Location1.Y=4096.084mil|Location2.Y=4155.135mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4750.475mil|Location2.X=4809.525mil|Location1.Y=4096.084mil|Location2.Y=4155.135mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Track (121.412mm,104.22mm)(121.412mm,106.887mm) on Top Layer Location : [X = 121.412mm][Y = 104.79mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5117.474mil|Location2.X=5242.525mil|Location1.Y=4040.633mil|Location2.Y=4165.684mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5117.474mil|Location2.X=5242.525mil|Location1.Y=4040.633mil|Location2.Y=4165.684mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (130.683mm,102.95mm) (132.461mm,105.49mm) on Top Layer And Pad U2-15(131.572mm,104.22mm) on Top Layer Location : [X = 131.572mm][Y = 104.22mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5164.928mil|Location2.X=5195.072mil|Location1.Y=4095.558mil|Location2.Y=4125.702mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5164.928mil|Location2.X=5195.072mil|Location1.Y=4095.558mil|Location2.Y=4125.702mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (130.683mm,102.95mm) (132.461mm,105.49mm) on Top Layer And Track (131.572mm,104.22mm)(131.572mm,104.6mm) on Top Layer Location : [X = 131.572mm][Y = 104.41mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3817.474mil|Location2.X=3942.524mil|Location1.Y=4040.633mil|Location2.Y=4165.684mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3817.474mil|Location2.X=3942.524mil|Location1.Y=4040.633mil|Location2.Y=4165.684mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (97.663mm,102.95mm) (99.441mm,105.49mm) on Top Layer And Pad U2-2(98.552mm,104.22mm) on Top Layer Location : [X = 98.552mm][Y = 104.22mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3864.928mil|Location2.X=3895.072mil|Location1.Y=4095.558mil|Location2.Y=4125.702mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3864.928mil|Location2.X=3895.072mil|Location1.Y=4095.558mil|Location2.Y=4125.702mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (97.663mm,102.95mm) (99.441mm,105.49mm) on Top Layer And Track (98.552mm,104.22mm)(98.552mm,104.6mm) on Top Layer Location : [X = 98.552mm][Y = 104.41mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3865.077mil|Location2.X=3924.824mil|Location1.Y=4103.216mil|Location2.Y=4162.963mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3865.077mil|Location2.X=3924.824mil|Location1.Y=4103.216mil|Location2.Y=4162.963mil|Absolute=True">Short-Circuit Constraint: Between Area Fill (97.663mm,102.95mm) (99.441mm,105.49mm) on Top Layer And Track (98.552mm,104.6mm)(99.949mm,105.997mm) on Top Layer Location : [X = 98.932mm][Y = 104.98mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad J2-(145.765mm,137.378mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad J2-(157.765mm,137.378mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad J3-(160.154mm,137.312mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad J3-(172.154mm,137.312mm) on Multi-Layer And Polygon Region (14 hole(s)) Bottom Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad J3-(172.154mm,137.312mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad J4-(146.235mm,107.069mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad J4-(158.235mm,107.069mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad J5-(160.624mm,107.014mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad J5-(172.624mm,107.014mm) on Multi-Layer And Polygon Region (14 hole(s)) Bottom Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad J5-(172.624mm,107.014mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4745.957mil|Location2.X=4777.035mil|Location1.Y=4782.925mil|Location2.Y=4814.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4745.957mil|Location2.X=4777.035mil|Location1.Y=4782.925mil|Location2.Y=4814.004mil|Absolute=True">Short-Circuit Constraint: Between Pad U1-17(120.942mm,122.381mm) on Bottom Layer And Pad U1-27(120.942mm,121.881mm) on Multi-Layer Location : [X = 120.942mm][Y = 121.881mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4745.957mil|Location2.X=4777.035mil|Location1.Y=4822.295mil|Location2.Y=4853.374mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4745.957mil|Location2.X=4777.035mil|Location1.Y=4822.295mil|Location2.Y=4853.374mil|Absolute=True">Short-Circuit Constraint: Between Pad U1-17(120.942mm,122.381mm) on Bottom Layer And Pad U1-28(120.942mm,122.881mm) on Multi-Layer Location : [X = 120.942mm][Y = 122.881mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4788.279mil|Location2.X=4819.358mil|Location1.Y=4782.925mil|Location2.Y=4814.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4788.279mil|Location2.X=4819.358mil|Location1.Y=4782.925mil|Location2.Y=4814.004mil|Absolute=True">Short-Circuit Constraint: Between Pad U1-18(122.017mm,122.381mm) on Bottom Layer And Pad U1-23(122.017mm,121.881mm) on Multi-Layer Location : [X = 122.017mm][Y = 121.881mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4788.279mil|Location2.X=4819.358mil|Location1.Y=4822.295mil|Location2.Y=4853.374mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4788.279mil|Location2.X=4819.358mil|Location1.Y=4822.295mil|Location2.Y=4853.374mil|Absolute=True">Short-Circuit Constraint: Between Pad U1-18(122.017mm,122.381mm) on Bottom Layer And Pad U1-24(122.017mm,122.881mm) on Multi-Layer Location : [X = 122.017mm][Y = 122.881mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4830.642mil|Location2.X=4861.721mil|Location1.Y=4782.925mil|Location2.Y=4814.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4830.642mil|Location2.X=4861.721mil|Location1.Y=4782.925mil|Location2.Y=4814.004mil|Absolute=True">Short-Circuit Constraint: Between Pad U1-19(123.093mm,122.381mm) on Bottom Layer And Pad U1-21(123.093mm,121.881mm) on Multi-Layer Location : [X = 123.093mm][Y = 121.881mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4830.642mil|Location2.X=4861.721mil|Location1.Y=4822.295mil|Location2.Y=4853.374mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4830.642mil|Location2.X=4861.721mil|Location1.Y=4822.295mil|Location2.Y=4853.374mil|Absolute=True">Short-Circuit Constraint: Between Pad U1-19(123.093mm,122.381mm) on Bottom Layer And Pad U1-22(123.093mm,122.881mm) on Multi-Layer Location : [X = 123.093mm][Y = 122.881mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4840.114mil|Location2.X=4860.595mil|Location1.Y=4803.736mil|Location2.Y=4824.217mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4840.114mil|Location2.X=4860.595mil|Location1.Y=4803.736mil|Location2.Y=4824.217mil|Absolute=True">Short-Circuit Constraint: Between Pad U1-19(123.093mm,122.381mm) on Bottom Layer And Track (123.093mm,122.381mm)(123.305mm,122.169mm) on Bottom Layer Location : [X = 123.199mm][Y = 122.275mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4872.965mil|Location2.X=4904.043mil|Location1.Y=4782.925mil|Location2.Y=4814.004mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4872.965mil|Location2.X=4904.043mil|Location1.Y=4782.925mil|Location2.Y=4814.004mil|Absolute=True">Short-Circuit Constraint: Between Pad U1-20(124.168mm,122.381mm) on Bottom Layer And Pad U1-25(124.168mm,121.881mm) on Multi-Layer Location : [X = 124.168mm][Y = 121.881mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4872.965mil|Location2.X=4904.043mil|Location1.Y=4822.295mil|Location2.Y=4853.374mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4872.965mil|Location2.X=4904.043mil|Location1.Y=4822.295mil|Location2.Y=4853.374mil|Absolute=True">Short-Circuit Constraint: Between Pad U1-20(124.168mm,122.381mm) on Bottom Layer And Pad U1-26(124.168mm,122.881mm) on Multi-Layer Location : [X = 124.168mm][Y = 122.881mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad U2-35(138.252mm,104.753mm) on Multi-Layer And Polygon Region (14 hole(s)) Bottom Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad U2-35(138.252mm,104.753mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad U2-36(138.252mm,138.891mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad U2-36(138.252mm,138.891mm) on Multi-Layer And Polygon Region (5 hole(s)) Bottom Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad U2-37(94.386mm,138.891mm) on Multi-Layer And Polygon Region (14 hole(s)) Bottom Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad U2-37(94.386mm,138.891mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad U2-38(94.402mm,104.753mm) on Multi-Layer And Polygon Region (14 hole(s)) Bottom Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=125795.18mil|Location2.X=-125795.18mil|Location1.Y=125795.18mil|Location2.Y=-125795.18mil|Absolute=True">Short-Circuit Constraint: Between Pad U2-38(94.402mm,104.753mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID551HABEEZYKAMTST1LYIXZCJEEPPQSM3XBZK1FDT45I0L4IZ4O3N"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5844.478mil|Location2.X=5969.459mil|Location1.Y=4107.244mil|Location2.Y=4812.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5844.478mil|Location2.X=5969.459mil|Location1.Y=4107.244mil|Location2.Y=4812.598mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J4-1(149.235mm,105.109mm) on Multi-Layer And Pad P1-6(150.749mm,121.365mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4849.606mil|Location2.X=4894.685mil|Location1.Y=4550.315mil|Location2.Y=4747.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4849.606mil|Location2.X=4894.685mil|Location1.Y=4550.315mil|Location2.Y=4747.283mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad U1-11(123.305mm,120.131mm) on Bottom Layer And Via (123.825mm,116.078mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3842.024mil|Location2.X=4118.976mil|Location1.Y=5434.213mil|Location2.Y=5542.087mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3842.024mil|Location2.X=4118.976mil|Location1.Y=5434.213mil|Location2.Y=5542.087mil|Absolute=True">Un-Routed Net Constraint: Net +5 Between Pad U2-33(98.577mm,139.399mm) on Top Layer And Pad U2-31(103.632mm,139.399mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4844.213mil|Location2.X=4856.496mil|Location1.Y=4807.835mil|Location2.Y=4820.118mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4844.213mil|Location2.X=4856.496mil|Location1.Y=4807.835mil|Location2.Y=4820.118mil|Absolute=True">Un-Routed Net Constraint: Track (123.093mm,122.381mm)(123.305mm,122.169mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5070mil|Location2.X=5280mil|Location1.Y=4068.088mil|Location2.Y=4218.11mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5070mil|Location2.X=5280mil|Location1.Y=4068.088mil|Location2.Y=4218.11mil|Absolute=True">Un-Routed Net Constraint: Net TX_Enable Between Track (130.303mm,105.869mm)(131.318mm,105.869mm) on Top Layer And Track (131.572mm,104.22mm)(131.572mm,104.6mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5319.149mil|Location2.X=7147.638mil|Location1.Y=6055mil|Location2.Y=6065mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5319.149mil|Location2.X=7147.638mil|Location1.Y=6055mil|Location2.Y=6065mil|Absolute=True">Un-Routed Net Constraint: Track (135.233mm,153.924mm)(181.423mm,153.924mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7077.638mil|Location2.X=7147.638mil|Location1.Y=6035mil|Location2.Y=6065mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7077.638mil|Location2.X=7147.638mil|Location1.Y=6035mil|Location2.Y=6065mil|Absolute=True">Un-Routed Net Constraint: Track (179.899mm,153.416mm)(181.423mm,153.924mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7077.638mil|Location2.X=7147.638mil|Location1.Y=6055mil|Location2.Y=6085mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7077.638mil|Location2.X=7147.638mil|Location1.Y=6055mil|Location2.Y=6085mil|Absolute=True">Un-Routed Net Constraint: Track (179.899mm,154.432mm)(181.423mm,153.924mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7137.638mil|Location2.X=7147.638mil|Location1.Y=5638.15mil|Location2.Y=6075mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7137.638mil|Location2.X=7147.638mil|Location1.Y=5638.15mil|Location2.Y=6075mil|Absolute=True">Un-Routed Net Constraint: Track (181.423mm,143.336mm)(181.423mm,154.178mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7138.386mil|Location2.X=8250mil|Location1.Y=5619.531mil|Location2.Y=5629.531mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7138.386mil|Location2.X=8250mil|Location1.Y=5619.531mil|Location2.Y=5629.531mil|Absolute=True">Un-Routed Net Constraint: Track (181.442mm,142.863mm)(209.423mm,142.863mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7152.638mil|Location2.X=8250mil|Location1.Y=3930.236mil|Location2.Y=3940.236mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7152.638mil|Location2.X=8250mil|Location1.Y=3930.236mil|Location2.Y=3940.236mil|Absolute=True">Un-Routed Net Constraint: Track (181.804mm,99.955mm)(209.423mm,99.955mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8210mil|Location2.X=8240mil|Location1.Y=3930.236mil|Location2.Y=4000.236mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8210mil|Location2.X=8240mil|Location1.Y=3930.236mil|Location2.Y=4000.236mil|Absolute=True">Un-Routed Net Constraint: Track (208.661mm,101.479mm)(209.169mm,99.955mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8210mil|Location2.X=8240mil|Location1.Y=5559.531mil|Location2.Y=5629.531mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8210mil|Location2.X=8240mil|Location1.Y=5559.531mil|Location2.Y=5629.531mil|Absolute=True">Un-Routed Net Constraint: Track (208.661mm,141.339mm)(209.169mm,142.863mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8230mil|Location2.X=8240mil|Location1.Y=4899.843mil|Location2.Y=5629.531mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8230mil|Location2.X=8240mil|Location1.Y=4899.843mil|Location2.Y=5629.531mil|Absolute=True">Un-Routed Net Constraint: Track (209.169mm,124.583mm)(209.169mm,142.863mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8230mil|Location2.X=8260mil|Location1.Y=5559.531mil|Location2.Y=5629.531mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8230mil|Location2.X=8260mil|Location1.Y=5559.531mil|Location2.Y=5629.531mil|Absolute=True">Un-Routed Net Constraint: Track (209.169mm,142.863mm)(209.677mm,141.339mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8230mil|Location2.X=8240mil|Location1.Y=3930.236mil|Location2.Y=4627.924mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8230mil|Location2.X=8240mil|Location1.Y=3930.236mil|Location2.Y=4627.924mil|Absolute=True">Un-Routed Net Constraint: Track (209.169mm,99.955mm)(209.169mm,117.422mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8230mil|Location2.X=8260mil|Location1.Y=3930.236mil|Location2.Y=4000.236mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8230mil|Location2.X=8260mil|Location1.Y=3930.236mil|Location2.Y=4000.236mil|Absolute=True">Un-Routed Net Constraint: Track (209.169mm,99.955mm)(209.677mm,101.479mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3230.748mil|Location2.X=3240.748mil|Location1.Y=5629.531mil|Location2.Y=6075mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3230.748mil|Location2.X=3240.748mil|Location1.Y=5629.531mil|Location2.Y=6075mil|Absolute=True">Un-Routed Net Constraint: Track (82.188mm,143.117mm)(82.188mm,154.178mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3230.748mil|Location2.X=5027.236mil|Location1.Y=6055mil|Location2.Y=6065mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3230.748mil|Location2.X=5027.236mil|Location1.Y=6055mil|Location2.Y=6065mil|Absolute=True">Un-Routed Net Constraint: Track (82.188mm,153.924mm)(127.565mm,153.924mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3230.748mil|Location2.X=3300.748mil|Location1.Y=6035mil|Location2.Y=6065mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3230.748mil|Location2.X=3300.748mil|Location1.Y=6035mil|Location2.Y=6065mil|Absolute=True">Un-Routed Net Constraint: Track (82.188mm,153.924mm)(83.712mm,153.416mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3230.748mil|Location2.X=3300.748mil|Location1.Y=6055mil|Location2.Y=6085mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3230.748mil|Location2.X=3300.748mil|Location1.Y=6055mil|Location2.Y=6085mil|Absolute=True">Un-Routed Net Constraint: Track (82.188mm,153.924mm)(83.712mm,154.432mm) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5130.315mil|Location2.X=5169.685mil|Location1.Y=5303.465mil|Location2.Y=5342.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5130.315mil|Location2.X=5169.685mil|Location1.Y=5303.465mil|Location2.Y=5342.835mil|Absolute=True">Un-Routed Net Constraint: Via (130.81mm,135.208mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5755.315mil|Location2.X=5794.685mil|Location1.Y=5153.465mil|Location2.Y=5192.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5755.315mil|Location2.X=5794.685mil|Location1.Y=5153.465mil|Location2.Y=5192.835mil|Absolute=True">Un-Routed Net Constraint: Via (146.685mm,131.398mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6863.11mil|Location2.X=7107.205mil|Location1.Y=3970.669mil|Location2.Y=4214.764mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6863.11mil|Location2.X=7107.205mil|Location1.Y=3970.669mil|Location2.Y=4214.764mil|Absolute=True">Un-Routed Net Constraint: Via (177.423mm,103.955mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6863.11mil|Location2.X=7107.205mil|Location1.Y=5348.622mil|Location2.Y=5592.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6863.11mil|Location2.X=7107.205mil|Location1.Y=5348.622mil|Location2.Y=5592.717mil|Absolute=True">Un-Routed Net Constraint: Via (177.423mm,138.955mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3280.433mil|Location2.X=3524.528mil|Location1.Y=3970.669mil|Location2.Y=4214.764mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3280.433mil|Location2.X=3524.528mil|Location1.Y=3970.669mil|Location2.Y=4214.764mil|Absolute=True">Un-Routed Net Constraint: Via (86.423mm,103.955mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3280.433mil|Location2.X=3524.528mil|Location1.Y=5348.622mil|Location2.Y=5592.717mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3280.433mil|Location2.X=3524.528mil|Location1.Y=5348.622mil|Location2.Y=5592.717mil|Absolute=True">Un-Routed Net Constraint: Via (86.423mm,138.955mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDL0DO3DG0QNJUEVBYEZ3W2TB0BC2WDKVTVBUV4OPJJGGFQQM4G2WP"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Width Constraint (Min=0.127mm) (Max=0.5mm) (Preferred=0.2mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4846.886mil|Location2.X=4861.623mil|Location1.Y=4808.379mil|Location2.Y=4817.445mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4846.886mil|Location2.X=4861.623mil|Location1.Y=4808.379mil|Location2.Y=4817.445mil|Absolute=True">Width Constraint: Track (123.093mm,122.381mm)(123.305mm,122.169mm) on Bottom Layer Actual Width = 0.1mm, Target Width = 0.127mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDS3OO4QSPIC4THZ3POSLXGR4EBHZQVTG2HBAHMSDUIZRNB5PHMBHF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Net Antennae (Tolerance=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5161.579mil|Location2.X=5184.996mil|Location1.Y=4159.667mil|Location2.Y=4193.584mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5161.579mil|Location2.X=5184.996mil|Location1.Y=4159.667mil|Location2.Y=4193.584mil|Absolute=True">Net Antennae: Track (130.303mm,105.869mm)(131.318mm,105.869mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
