@@ -1,0 +1,22 @@
+Output: Gerber X2 Files
+Type  : GerberX2
+From  : Variant [[No Variations]] of Project [Roboszpon.PrjPcb]
+   Generated File[Roboszpon_Copper_Signal_Top.gbr]
+   Generated File[Roboszpon_Copper_Signal_Bot.gbr]
+   Generated File[Roboszpon_Legend_Top.gbr]
+   Generated File[Roboszpon_Legend_Bot.gbr]
+   Generated File[Roboszpon_Soldermask_Top.gbr]
+   Generated File[Roboszpon_Soldermask_Bot.gbr]
+   Generated File[Roboszpon_Paste_Top.gbr]
+   Generated File[Roboszpon_Paste_Bot.gbr]
+   Generated File[Roboszpon_Profile.gbr]
+   Generated File[Roboszpon_NPTH_Drill.gbr]
+   Generated File[Roboszpon_PTH_Drill.gbr]
+   Generated File[Roboszpon.EXTREP]
+   Generated File[Roboszpon.REP]
+
+
+Files Generated   : 13
+Documents Printed : 0
+
+Finished Output Generation At 17:37:41 On 09.04.2025
