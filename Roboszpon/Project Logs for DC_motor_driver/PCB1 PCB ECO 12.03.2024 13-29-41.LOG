@@ -1,5 +1,0 @@
-Removed Pin From Net: NetName=nFAULT0 Pin=U1-61
-Removed Pin From Net: NetName=nFAULT1 Pin=U1-62
-Added Pin To Net: NetName=nFAULT0 Pin=U1-35
-Added Pin To Net: NetName=nFAULT1 Pin=U1-51
-Added Member To Class: ClassName=Sheet1 Member=Component U2 DRV8873SPWPRQ1
