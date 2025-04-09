@@ -1,0 +1,2 @@
+# PTSM adapter
+Never used

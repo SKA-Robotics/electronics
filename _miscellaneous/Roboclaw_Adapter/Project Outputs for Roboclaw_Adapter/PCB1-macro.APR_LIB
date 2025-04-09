@@ -1,0 +1,270 @@
+
+--boundary_.oOo._9ub7Kbuh+tBOo7UUjW5pUgsNl5B9pnct
+Content-Length: 1274
+Content-Type: application/octet-stream
+X-File-MD5: 730180832400ff08681db75b0fcafe1c
+X-File-Mtime: 1692217892
+X-File-Path: /Projects/Altium/Roboclaw_Adapter/Project Outputs for Roboclaw_Adapter/PCB1.EXTREP
+
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: PCB1.GBR   16.08.2023  22:31:30
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.gbr                Top Layer                               
+.gbr                Bottom Layer                            
+.gbr                Top Overlay                             
+.gbr                Bottom Overlay                          
+.gbr                Top Solder                              
+.gbr                Bottom Solder                           
+.gbr                Top Paste                               
+.gbr                Bottom Paste                            
+.gbr                Profile                                 
+.gbr                Non-plated through-hole drill file      
+.gbr                Plated through-hole drill file          
+------------------------------------------------------------------------------------------
+
+--boundary_.oOo._9ub7Kbuh+tBOo7UUjW5pUgsNl5B9pnct
+Content-Length: 1425
+Content-Type: application/octet-stream
+X-File-MD5: 603c700e86e259f8e59f812f6583b5ef
+X-File-Mtime: 1692217892
+X-File-Path: /Projects/Altium/Roboclaw_Adapter/Project Outputs for Roboclaw_Adapter/PCB1.apr
+
+D10   ROUNDED            20.000      20.000       0.000  LINE       0.000
+D11   ROUNDED            59.055      59.055       0.000 FLASH       0.000
+D12   RECTANGULAR        59.055      59.055       0.000 FLASH      90.000
+D13   ROUNDED            62.992      62.992       0.000 FLASH       0.000
+D14   RECTANGULAR        62.992      62.992       0.000 FLASH      90.000
+D15   ROUNDED            50.000      50.000       0.000 FLASH       0.000
+D16   ROUNDED             7.874       7.874       0.000  LINE       0.000
+D17   ROUNDED             6.000       6.000       0.000  LINE       0.000
+D18   RECTANGULAR        31.496     177.165       0.000 FLASH       0.000
+D19   RECTANGULAR        31.496     177.165       0.000 FLASH       0.000
+D20   ROUNDED            67.055      67.055       0.000 FLASH       0.000
+D21   RECTANGULAR        67.055      67.055       0.000 FLASH      90.000
+D22   ROUNDED            70.992      70.992       0.000 FLASH       0.000
+D23   RECTANGULAR        70.992      70.992       0.000 FLASH      90.000
+D24   ROUNDED            58.000      58.000       0.000 FLASH       0.000
+D25   ROUNDED             1.000       1.000       0.000  LINE       0.000
+D26   ROUNDED            35.433      35.433       0.000 FLASH      90.000
+D27   ROUNDED            43.307      43.307       0.000 FLASH      90.000
+D28   ROUNDED            28.000      28.000       0.000 FLASH       0.000
+
+--boundary_.oOo._9ub7Kbuh+tBOo7UUjW5pUgsNl5B9pnct
+Content-Length: 3419
+Content-Type: application/octet-stream
+X-File-MD5: be120837c719e46c7f84ee99e7676874
+X-File-Mtime: 1692217892
+X-File-Path: /Projects/Altium/Roboclaw_Adapter/Project Outputs for Roboclaw_Adapter/PCB1.REP
+
+*************************************************************
+FileName = PCB1.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Layer
+      File : PCB1_Copper_Signal_Top.gbr
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : PCB1_Copper_Signal_Bot.gbr
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : PCB1_Legend_Top.gbr
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D16
+    D17
+    D18
+    D19
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : PCB1_Legend_Bot.gbr
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D16
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : PCB1_Soldermask_Top.gbr
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D20
+    D21
+    D22
+    D23
+    D24
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : PCB1_Soldermask_Bot.gbr
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D20
+    D21
+    D22
+    D23
+    D24
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : PCB1_Paste_Top.gbr
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : PCB1_Paste_Bot.gbr
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Profile
+      File : PCB1_Profile.gbr
+
+
+Used DCodes :
+    D25
+*************************************************************
+
+*************************************************************
+Generating : Non-plated through-hole drill file
+      File : PCB1_NPTH_Drill.gbr
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Plated through-hole drill file
+      File : PCB1_PTH_Drill.gbr
+
+
+Used DCodes :
+    D26
+    D27
+    D28
+*************************************************************
+
+
+--boundary_.oOo._9ub7Kbuh+tBOo7UUjW5pUgsNl5B9pnct
+Content-Length: 2317
+Content-Type: application/octet-stream
+X-File-MD5: 18b75e4f89108c56f4473c13b14dd51d
+X-File-Mtime: 1692217890
+X-File-Path: /Projects/Altium/Roboclaw_Adapter/Project Outputs for Roboclaw_Adapter/PCB1_Copper_Signal_Top.gbr
+
+%TF.GenerationSoftware,Altium Limited,Altium Designer,23.7.1 (13)*%
+G04 Layer_Physical_Order=1*
+G04 Layer_Color=255*
+%FSLAX45Y45*%
+%MOMM*%
+%TF.SameCoordinates,25FEA040-87FC-4766-ABD7-6AF3FFDF4EEB*%
+%TF.FilePolarity,Positive*%
+%TF.FileFunction,Copper,L1,Top,Signal*%
+%TF.Part,Single*%
+G01*
+G75*
+%TA.AperFunction,Conductor*%
+%ADD10C,0.50800*%
+%TA.AperFunction,ComponentPad*%
+%ADD11C,1.50000*%
+%ADD12R,1.50000X1.50000*%
+%ADD13C,1.60000*%
+%ADD14R,1.60000X1.60000*%
+%TA.AperFunction,ViaPad*%
+%ADD15C,1.27000*%
+D10*
+X5334000Y6350000D02*
+X6096000Y5588000D01*
+X5334000Y6096000D02*
+X5466080Y5963920D01*
+Y4196080D02*
+Y5963920D01*
+X5334000Y4064000D02*
+X5466080Y4196080D01*
+X5709920Y4947920D02*
+X6096000Y5334000D01*
+X5709920Y4693920D02*
+Y4947920D01*
+X4947920Y3942080D02*
+X5080000Y3810000D01*
+X4947920Y3942080D02*
+Y5709920D01*
+X5080000Y5842000D01*
+X6350000Y6350000D02*
+Y6604000D01*
+Y6858000D01*

@@ -1,0 +1,338 @@
+
+--boundary_.oOo._xDLZ92uUgcYEQD2IyrQgzR0YkdkAUjwd
+Content-Length: 1274
+Content-Type: application/octet-stream
+X-File-MD5: ef012e052d2e51629c701f0e7b359487
+X-File-Mtime: 1692218806
+X-File-Path: /Projects/Altium/Power_battery/Project Outputs for Power_battery/PCB1.EXTREP
+
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: PCB1.GBR   16.08.2023  22:46:44
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.gbr                Top Layer                               
+.gbr                Bottom Layer                            
+.gbr                Top Overlay                             
+.gbr                Bottom Overlay                          
+.gbr                Top Solder                              
+.gbr                Bottom Solder                           
+.gbr                Top Paste                               
+.gbr                Bottom Paste                            
+.gbr                Profile                                 
+.gbr                Non-plated through-hole drill file      
+.gbr                Plated through-hole drill file          
+------------------------------------------------------------------------------------------
+
+--boundary_.oOo._xDLZ92uUgcYEQD2IyrQgzR0YkdkAUjwd
+Content-Length: 3374
+Content-Type: application/octet-stream
+X-File-MD5: 8f981bd943d102942f6b6b9f54d132fc
+X-File-Mtime: 1692218806
+X-File-Path: /Projects/Altium/Power_battery/Project Outputs for Power_battery/PCB1.REP
+
+*************************************************************
+FileName = PCB1.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Layer
+      File : PCB1_Copper_Signal_Top.gbr
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : PCB1_Copper_Signal_Bot.gbr
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : PCB1_Legend_Top.gbr
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D14
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : PCB1_Legend_Bot.gbr
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D14
+    D15
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : PCB1_Soldermask_Top.gbr
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D17
+    D18
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : PCB1_Soldermask_Bot.gbr
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D17
+    D18
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : PCB1_Paste_Top.gbr
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : PCB1_Paste_Bot.gbr
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Profile
+      File : PCB1_Profile.gbr
+
+
+Used DCodes :
+    D19
+*************************************************************
+
+*************************************************************
+Generating : Non-plated through-hole drill file
+      File : PCB1_NPTH_Drill.gbr
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Plated through-hole drill file
+      File : PCB1_PTH_Drill.gbr
+
+
+Used DCodes :
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+*************************************************************
+
+
+--boundary_.oOo._xDLZ92uUgcYEQD2IyrQgzR0YkdkAUjwd
+Content-Length: 8046
+Content-Type: application/octet-stream
+X-File-MD5: a063f3b8f9df7ec1ae55d2f72265ddee
+X-File-Mtime: 1692218804
+X-File-Path: /Projects/Altium/Power_battery/Project Outputs for Power_battery/PCB1_Copper_Signal_Bot.gbr
+
+%TF.GenerationSoftware,Altium Limited,Altium Designer,23.7.1 (13)*%
+G04 Layer_Physical_Order=2*
+G04 Layer_Color=16711680*
+%FSLAX45Y45*%
+%MOMM*%
+%TF.SameCoordinates,30466DDA-3D0C-41F1-AC50-7AA24E5CAA7F*%
+%TF.FilePolarity,Positive*%
+%TF.FileFunction,Copper,L2,Bot,Signal*%
+%TF.Part,Single*%
+G01*
+G75*
+%TA.AperFunction,Conductor*%
+%ADD10C,1.50000*%
+%TA.AperFunction,ComponentPad*%
+%ADD11R,5.50000X5.50000*%
+%ADD12C,2.00000*%
+%TA.AperFunction,ViaPad*%
+%ADD13C,1.27000*%
+G36*
+X6100000Y0D02*
+X0D01*
+Y1450000D01*
+X6100000D01*
+Y0D01*
+D02*
+G37*
+G36*
+Y1550000D02*
+X0D01*
+Y3000000D01*
+X6100000D01*
+Y1550000D01*
+D02*
+G37*
+%LPC*%
+G36*
+X3667275Y475400D02*
+X3632725D01*
+X3598838Y468659D01*
+X3566917Y455437D01*
+X3538189Y436242D01*
+X3513758Y411811D01*
+X3494563Y383083D01*
+X3481341Y351162D01*
+X3474600Y317275D01*
+Y282725D01*
+X3481341Y248838D01*
+X3494563Y216917D01*
+X3513758Y188189D01*
+X3538189Y163758D01*
+X3566917Y144563D01*
+X3598838Y131341D01*
+X3632725Y124600D01*
+X3667275D01*
+X3701162Y131341D01*
+X3733083Y144563D01*
+X3761811Y163758D01*
+X3786242Y188189D01*
+X3805437Y216917D01*
+X3818659Y248838D01*
+X3825400Y282725D01*
+Y317275D01*
+X3818659Y351162D01*
+X3805437Y383083D01*
+X3786242Y411811D01*
+X3761811Y436242D01*
+X3733083Y455437D01*
+X3701162Y468659D01*
+X3667275Y475400D01*
+D02*
+G37*
+G36*
+X1342275D02*
+X1307725D01*
+X1273838Y468659D01*
+X1241917Y455437D01*
+X1213189Y436242D01*
+X1188758Y411811D01*
+X1169563Y383083D01*
+X1156341Y351162D01*
+X1149600Y317275D01*
+Y282725D01*
+X1156341Y248838D01*
+X1169563Y216917D01*
+X1188758Y188189D01*
+X1213189Y163758D01*
+X1241917Y144563D01*
+X1273838Y131341D01*
+X1307725Y124600D01*
+X1342275D01*
+X1376162Y131341D01*
+X1408083Y144563D01*
+X1436811Y163758D01*
+X1461242Y188189D01*
+X1480437Y216917D01*
+X1493659Y248838D01*
+X1500400Y282725D01*
+Y317275D01*
+X1493659Y351162D01*
+X1480437Y383083D01*
+X1461242Y411811D01*
+X1436811Y436242D01*
+X1408083Y455437D01*
+X1376162Y468659D01*
+X1342275Y475400D01*
+D02*
+G37*
+G36*
+X3667275Y2875400D02*
+X3632725D01*
+X3598838Y2868659D01*
+X3566917Y2855437D01*
+X3538189Y2836242D01*
+X3513758Y2811811D01*
+X3494563Y2783083D01*
+X3481341Y2751162D01*
+X3474600Y2717275D01*
+Y2682725D01*
+X3481341Y2648838D01*
+X3494563Y2616917D01*
+X3513758Y2588189D01*
+X3538189Y2563758D01*
+X3566917Y2544563D01*
+X3598838Y2531341D01*
+X3632725Y2524600D01*
+X3667275D01*
+X3701162Y2531341D01*
+X3733083Y2544563D01*
+X3761811Y2563758D01*
+X3786242Y2588189D01*
+X3805437Y2616917D01*
+X3818659Y2648838D01*
+X3825400Y2682725D01*
+Y2717275D01*
+X3818659Y2751162D01*
+X3805437Y2783083D01*
+X3786242Y2811811D01*
+X3761811Y2836242D01*
+X3733083Y2855437D01*
+X3701162Y2868659D01*
+X366727

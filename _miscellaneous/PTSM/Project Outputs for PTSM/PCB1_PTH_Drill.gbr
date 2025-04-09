@@ -1,0 +1,46 @@
+%TF.GenerationSoftware,Altium Limited,Altium Designer,23.3.1 (30)*%
+G04 Layer_Color=0*
+%FSLAX45Y45*%
+%MOMM*%
+%TF.SameCoordinates,3978930B-4288-4960-BFFB-EFBA2ACA1435*%
+%TF.FilePolarity,Positive*%
+%TF.FileFunction,Plated,1,2,PTH,Drill*%
+%TF.Part,Single*%
+G01*
+G75*
+%TA.AperFunction,ComponentDrill*%
+%ADD22C,1.20000*%
+%ADD23C,1.05000*%
+%TA.AperFunction,OtherDrill,Pad Free-1 (6.25mm,15mm)*%
+%ADD24C,3.00000*%
+D22*
+X200000Y2625000D02*
+D03*
+X450000D02*
+D03*
+X700000D02*
+D03*
+X950000D02*
+D03*
+X200000Y3125000D02*
+D03*
+X450000D02*
+D03*
+X700000D02*
+D03*
+X950000D02*
+D03*
+D23*
+X250000Y425000D02*
+D03*
+X500000D02*
+D03*
+X750000D02*
+D03*
+X1000000D02*
+D03*
+D24*
+X625000Y1500000D02*
+D03*
+%TF.MD5,75423a6a6e6d1b4b0f591ae2c817aaea*%
+M02*

@@ -1,0 +1,42 @@
+C  Project Name : 
+C  Board Name : 
+C  Date : 11.05.2023
+C  Time : 00:55:30
+C  
+C  --------------- Layer Stackup --------------------
+C  
+C  Top Layer
+C  Bottom Layer
+C  
+C  --------------------------------------------------
+C  
+P  JOB
+P  UNITS CUST
+P  TITLE QjzE70.tmp
+P  NUM 1.0
+P  REV A
+P  VER IPC-D-356A
+P  IMAGE PRIMARY
+317N/C                    -4    D1181PA00X 001378Y 005906X0000          S0
+317N/C                    -3    D1181PA00X 013189Y 005906X0000          S0
+317NetJ1_1          J3    -1    D0394PA00X 013976Y 008858X0000          S0
+317NetJ1_1          J2    -1    D0394PA00X 008858Y 008858X0000          S0
+317NetJ1_1          J1    -1    D0394PA00X 003740Y 008858X0000          S0
+317NetJ1_1          J4    -1    D0472PA00X 006496Y 003150X0000          S0
+317NetJ1_1          J4    -1    D0472PA00X 006496Y 001181X0000          S0
+317NetJ1_2          J3    -2    D0394PA00X 012992Y 008858X0000          S0
+317NetJ1_2          J2    -2    D0394PA00X 007874Y 008858X0000          S0
+317NetJ1_2          J1    -2    D0394PA00X 002756Y 008858X0000          S0
+317NetJ1_2          J4    -2    D0472PA00X 007480Y 003150X0000          S0
+317NetJ1_2          J4    -2    D0472PA00X 007480Y 001181X0000          S0
+317NetJ1_3          J3    -3    D0394PA00X 012008Y 008858X0000          S0
+317NetJ1_3          J2    -3    D0394PA00X 006890Y 008858X0000          S0
+317NetJ1_3          J1    -3    D0394PA00X 001772Y 008858X0000          S0
+317NetJ1_3          J4    -3    D0472PA00X 008465Y 003150X0000          S0
+317NetJ1_3          J4    -3    D0472PA00X 008465Y 001181X0000          S0
+317NetJ1_4          J3    -4    D0394PA00X 011024Y 008858X0000          S0
+317NetJ1_4          J2    -4    D0394PA00X 005906Y 008858X0000          S0
+317NetJ1_4          J1    -4    D0394PA00X 000787Y 008858X0000          S0
+317NetJ1_4          J4    -4    D0472PA00X 009449Y 003150X0000          S0
+317NetJ1_4          J4    -4    D0472PA00X 009449Y 001181X0000          S0
+999
