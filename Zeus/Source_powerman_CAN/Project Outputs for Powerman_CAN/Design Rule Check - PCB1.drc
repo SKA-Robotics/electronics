@@ -1,0 +1,53 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\MG\Nextcloud\_PROJECTS\Powerman_CAN\PCB1.PcbDoc
+Date     : 08.01.2025
+Time     : 22:42:49
+
+Processing Rule : Clearance Constraint (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net CAN_H Between Track (100.202mm,36.5mm)(100.733mm,35.969mm) on Top Layer And Pad J5-3(120.915mm,36.5mm) on Multi-Layer 
+Rule Violations :1
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=1.27mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)
+   Violation between Hole Size Constraint: (3.6mm > 2.54mm) Pad Free-13(151mm,28mm) on Multi-Layer Actual Hole Size = 3.6mm
+   Violation between Hole Size Constraint: (3.6mm > 2.54mm) Pad Free-13(151mm,42mm) on Multi-Layer Actual Hole Size = 3.6mm
+   Violation between Hole Size Constraint: (3.6mm > 2.54mm) Pad Free-13(28mm,28mm) on Multi-Layer Actual Hole Size = 3.6mm
+   Violation between Hole Size Constraint: (3.6mm > 2.54mm) Pad Free-13(28mm,42mm) on Multi-Layer Actual Hole Size = 3.6mm
+Rule Violations :4
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 5
+Waived Violations : 0
+Time Elapsed        : 00:00:00

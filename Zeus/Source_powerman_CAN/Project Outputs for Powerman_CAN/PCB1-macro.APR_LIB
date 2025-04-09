@@ -1,0 +1,275 @@
+
+--boundary_.oOo._d6znhgVcVN4CdS0YeA2+kmzxdbI62H++
+Content-Length: 1274
+Content-Type: application/octet-stream
+X-File-MD5: 42aab330c1c34fe87afc46c3c9d5a763
+X-File-Mtime: 1703419607
+X-File-Path: /Projects/Altium/Powerman_CAN/Project Outputs for Powerman_CAN/PCB1.EXTREP
+
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: PCB1.GBR   24.12.2023  13:06:44
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.gbr                Top Layer                               
+.gbr                Bottom Layer                            
+.gbr                Top Overlay                             
+.gbr                Bottom Overlay                          
+.gbr                Top Solder                              
+.gbr                Bottom Solder                           
+.gbr                Top Paste                               
+.gbr                Bottom Paste                            
+.gbr                Profile                                 
+.gbr                Non-plated through-hole drill file      
+.gbr                Plated through-hole drill file          
+------------------------------------------------------------------------------------------
+
+--boundary_.oOo._d6znhgVcVN4CdS0YeA2+kmzxdbI62H++
+Content-Length: 1500
+Content-Type: application/octet-stream
+X-File-MD5: 216021a20123883cf59e4fb1aef5a417
+X-File-Mtime: 1703419607
+X-File-Path: /Projects/Altium/Powerman_CAN/Project Outputs for Powerman_CAN/PCB1.apr
+
+D10   ROUNDED            20.000      20.000       0.000  LINE       0.000
+D11   ROUNDED            50.000      50.000       0.000  LINE       0.000
+D12   RECTANGULAR        61.811      61.811       0.000 FLASH      90.000
+D13   ROUNDED            61.811      61.811       0.000 FLASH       0.000
+D14   ROUNDED            40.157      40.157       0.000 FLASH       0.000
+D15   RECTANGULAR        59.055      59.055       0.000 FLASH       0.000
+D16   ROUNDED            59.055      59.055       0.000 FLASH       0.000
+D17   ROUNDED             9.842       9.842       0.000  LINE       0.000
+D18   ROUNDED             7.874       7.874       0.000  LINE       0.000
+D19   ROUNDED            10.000      10.000       0.000  LINE       0.000
+D20   RECTANGULAR        67.055      67.055       0.000 FLASH       0.000
+D21   ROUNDED            67.055      67.055       0.000 FLASH       0.000
+D22   ROUNDED             8.000       8.000       0.000 FLASH       0.000
+D23   ROUNDED             1.000       1.000       0.000  LINE       0.000
+D24   ROUNDED            40.157      40.157       0.000 FLASH      90.000
+D25   ROUNDED            35.433      35.433       0.000 FLASH       0.000
+D26   ROUNDED           141.732     141.732       0.000 FLASH       0.000
+D27   ROUNDED           141.732     141.732       0.000 FLASH       0.000
+D28   ROUNDED           141.732     141.732       0.000 FLASH       0.000
+D29   ROUNDED           141.732     141.732       0.000 FLASH       0.000
+
+--boundary_.oOo._d6znhgVcVN4CdS0YeA2+kmzxdbI62H++
+Content-Length: 3491
+Content-Type: application/octet-stream
+X-File-MD5: 2624595bcf144d0dd706c6e249d8943d
+X-File-Mtime: 1703419607
+X-File-Path: /Projects/Altium/Powerman_CAN/Project Outputs for Powerman_CAN/PCB1.REP
+
+*************************************************************
+FileName = PCB1.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Layer
+      File : PCB1_Copper_Signal_Top.gbr
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : PCB1_Copper_Signal_Bot.gbr
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : PCB1_Legend_Top.gbr
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D17
+    D18
+    D19
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : PCB1_Legend_Bot.gbr
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D18
+    D19
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : PCB1_Soldermask_Top.gbr
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D13
+    D14
+    D20
+    D21
+    D22
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : PCB1_Soldermask_Bot.gbr
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D13
+    D14
+    D20
+    D21
+    D22
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : PCB1_Paste_Top.gbr
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : PCB1_Paste_Bot.gbr
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Profile
+      File : PCB1_Profile.gbr
+
+
+Used DCodes :
+    D23
+*************************************************************
+
+*************************************************************
+Generating : Non-plated through-hole drill file
+      File : PCB1_NPTH_Drill.gbr
+
+
+Used DCodes :
+    D24
+*************************************************************
+
+*************************************************************
+Generating : Plated through-hole drill file
+      File : PCB1_PTH_Drill.gbr
+
+
+Used DCodes :
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+*************************************************************
+
+
+--boundary_.oOo._d6znhgVcVN4CdS0YeA2+kmzxdbI62H++
+Content-Length: 4630
+Content-Type: application/octet-stream
+X-File-MD5: cc16d4586a419b64bdc7e838c48ec665
+X-File-Mtime: 1703419605
+X-File-Path: /Projects/Altium/Powerman_CAN/Project Outputs for Powerman_CAN/PCB1_Copper_Signal_Bot.gbr
+
+%TF.GenerationSoftware,Altium Limited,Altium Designer,24.0.1 (36)*%
+G04 Layer_Physical_Order=2*
+G04 Layer_Color=16711680*
+%FSLAX45Y45*%
+%MOMM*%
+%TF.SameCoordinates,9BE18756-9D8A-4005-A41C-0EF74CF4EEEB*%
+%TF.FilePolarity,Positive*%
+%TF.FileFunction,Copper,L2,Bot,Signal*%
+%TF.Part,Single*%
+G01*
+G75*
+%TA.AperFunction,Conductor*%
+%ADD10C,0.50800*%
+%ADD11C,1.27000*%
+%TA.AperFunction,ComponentPad*%
+%ADD12R,1.57000X1.57000*%
+%ADD13C,1.57000*%
+%ADD14C,1.02000*%
+%ADD15R,1.50000X1.50000*%
+%ADD16C,1.50000*%
+D10*
+X3691500Y3354900D02*
+X3699300Y3347099D01*
+Y2930169D02*
+Y3347099D01*
+Y2930169D02*
+X3808000Y2821470D01*
+Y2800000D02*
+Y2821470D01*
+X3691500Y3354900D02*
+X3816401Y3479800D01*
+X5778500D01*
+X7988300Y3448237D02*
+Y3479800D01*
+X7891500Y3351437D02*
+X7988300Y3448237D01*
+X789
