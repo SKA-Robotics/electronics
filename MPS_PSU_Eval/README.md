@@ -18,9 +18,13 @@ This board uses XT60 as input and USB C as output, with additional 6 pin header 
 To enable operations, following values have to be set in the registers:
 
 0x08: 0xFFFF    -   set max current for PDO 4
+
 0x0B: 0x8500    -   GPIO behaviour    
+
 0x0D: 0x3490    -   GPIO behaviour
+
 0x0E: 0xC898    -   GPIO behaviour
+
 0x0F: 0x6464    -   Max power set to 100W
 
 # Test results
