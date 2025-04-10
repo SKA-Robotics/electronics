@@ -1,0 +1,22 @@
+Output: Gerber X2 Files
+Type  : GerberX2
+From  : Variant [[No Variations]] of Project [Servo Controller Board.PrjPcb]
+   Generated File[Servo Controller Board_Copper_Signal_Top.gbr]
+   Generated File[Servo Controller Board_Copper_Signal_Bot.gbr]
+   Generated File[Servo Controller Board_Legend_Top.gbr]
+   Generated File[Servo Controller Board_Legend_Bot.gbr]
+   Generated File[Servo Controller Board_Soldermask_Top.gbr]
+   Generated File[Servo Controller Board_Soldermask_Bot.gbr]
+   Generated File[Servo Controller Board_Paste_Top.gbr]
+   Generated File[Servo Controller Board_Paste_Bot.gbr]
+   Generated File[Servo Controller Board_Profile.gbr]
+   Generated File[Servo Controller Board_NPTH_Drill.gbr]
+   Generated File[Servo Controller Board_PTH_Drill.gbr]
+   Generated File[Servo Controller Board.EXTREP]
+   Generated File[Servo Controller Board.REP]
+
+
+Files Generated   : 13
+Documents Printed : 0
+
+Finished Output Generation At 22:51:48 On 10.04.2025

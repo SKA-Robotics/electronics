@@ -1,133 +1,21 @@
 Protel Design System Design Rule Check
-PCB File : C:\Users\Michal\Documents\github\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc
+PCB File : D:\electronics\Servo Controller Board\Lib\XT60PW-M\Servo Controller Board.PcbDoc
 Date     : 10.04.2025
-Time     : 00:49:02
+Time     : 22:51:29
 
-Processing Rule : Clearance Constraint (Gap=0.127mm) (All),(All)
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (100.203mm,102.95mm) (101.981mm,105.49mm) on Top Layer And Pad U2-3(101.092mm,104.22mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (100.203mm,102.95mm) (101.981mm,105.49mm) on Top Layer And Track (101.092mm,104.22mm)(101.092mm,104.6mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (100.203mm,102.95mm) (101.981mm,105.49mm) on Top Layer And Track (101.092mm,104.6mm)(102.785mm,106.293mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (102.743mm,138.129mm) (104.521mm,140.669mm) on Top Layer And Pad U2-31(103.632mm,139.399mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (105.283mm,138.129mm) (107.061mm,140.669mm) on Top Layer And Pad U2-30(106.172mm,139.424mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (105.283mm,138.129mm) (107.061mm,140.669mm) on Top Layer And Track (106.172mm,139.424mm)(106.172mm,139.804mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (105.283mm,138.129mm) (107.061mm,140.669mm) on Top Layer And Track (106.172mm,139.804mm)(107.428mm,141.061mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Pad U2-10(118.872mm,104.22mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (108.312mm,115.16mm)(118.872mm,104.6mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (118.872mm,103.84mm)(118.872mm,104.22mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (118.872mm,103.84mm)(120.778mm,101.934mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (118.872mm,104.22mm)(118.872mm,104.6mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Pad U2-11(121.412mm,104.22mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Track (121.412mm,103.84mm)(121.412mm,104.22mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Track (121.412mm,103.84mm)(122.689mm,102.563mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Track (121.412mm,104.22mm)(121.412mm,106.887mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (130.683mm,102.95mm) (132.461mm,105.49mm) on Top Layer And Pad U2-15(131.572mm,104.22mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (130.683mm,102.95mm) (132.461mm,105.49mm) on Top Layer And Track (131.572mm,104.22mm)(131.572mm,104.6mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (97.663mm,102.95mm) (99.441mm,105.49mm) on Top Layer And Pad U2-2(98.552mm,104.22mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (97.663mm,102.95mm) (99.441mm,105.49mm) on Top Layer And Track (98.552mm,104.22mm)(98.552mm,104.6mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.127mm) Between Area Fill (97.663mm,102.95mm) (99.441mm,105.49mm) on Top Layer And Track (98.552mm,104.6mm)(99.949mm,105.997mm) on Top Layer 
-   Violation between Clearance Constraint: (Collision < 0.254mm) Between Pad U1-17(120.942mm,122.381mm) on Bottom Layer And Pad U1-27(120.942mm,121.881mm) on Multi-Layer 
-   Violation between Clearance Constraint: (Collision < 0.254mm) Between Pad U1-17(120.942mm,122.381mm) on Bottom Layer And Pad U1-28(120.942mm,122.881mm) on Multi-Layer 
-   Violation between Clearance Constraint: (Collision < 0.254mm) Between Pad U1-18(122.017mm,122.381mm) on Bottom Layer And Pad U1-23(122.017mm,121.881mm) on Multi-Layer 
-   Violation between Clearance Constraint: (Collision < 0.254mm) Between Pad U1-18(122.017mm,122.381mm) on Bottom Layer And Pad U1-24(122.017mm,122.881mm) on Multi-Layer 
-   Violation between Clearance Constraint: (Collision < 0.254mm) Between Pad U1-19(123.093mm,122.381mm) on Bottom Layer And Pad U1-21(123.093mm,121.881mm) on Multi-Layer 
-   Violation between Clearance Constraint: (Collision < 0.254mm) Between Pad U1-19(123.093mm,122.381mm) on Bottom Layer And Pad U1-22(123.093mm,122.881mm) on Multi-Layer 
-   Violation between Clearance Constraint: (Collision < 0.2mm) Between Pad U1-19(123.093mm,122.381mm) on Bottom Layer And Track (123.093mm,122.381mm)(123.305mm,122.169mm) on Bottom Layer 
-   Violation between Clearance Constraint: (Collision < 0.254mm) Between Pad U1-20(124.168mm,122.381mm) on Bottom Layer And Pad U1-25(124.168mm,121.881mm) on Multi-Layer 
-   Violation between Clearance Constraint: (Collision < 0.254mm) Between Pad U1-20(124.168mm,122.381mm) on Bottom Layer And Pad U1-26(124.168mm,122.881mm) on Multi-Layer 
-Rule Violations :30
-
-Processing Rule : Clearance Constraint (Gap=0.254mm) ((InNet('NetJ4_1') OR InNet('NetJ4_2') OR InNet('NETJ5_1') OR InNet('NetJ5_2') OR InNet('NetF1_1') OR InNet('VM'))),(All)
+Processing Rule : Clearance Constraint (Gap=0.254mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
-   Violation between Short-Circuit Constraint: Between Area Fill (100.203mm,102.95mm) (101.981mm,105.49mm) on Top Layer And Pad U2-3(101.092mm,104.22mm) on Top Layer Location : [X = 101.092mm][Y = 104.22mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (100.203mm,102.95mm) (101.981mm,105.49mm) on Top Layer And Track (101.092mm,104.22mm)(101.092mm,104.6mm) on Top Layer Location : [X = 101.092mm][Y = 104.41mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (100.203mm,102.95mm) (101.981mm,105.49mm) on Top Layer And Track (101.092mm,104.6mm)(102.785mm,106.293mm) on Top Layer Location : [X = 101.472mm][Y = 104.98mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (102.743mm,138.129mm) (104.521mm,140.669mm) on Top Layer And Pad U2-31(103.632mm,139.399mm) on Top Layer Location : [X = 103.632mm][Y = 139.399mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (105.283mm,138.129mm) (107.061mm,140.669mm) on Top Layer And Pad U2-30(106.172mm,139.424mm) on Top Layer Location : [X = 106.172mm][Y = 139.412mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (105.283mm,138.129mm) (107.061mm,140.669mm) on Top Layer And Track (106.172mm,139.424mm)(106.172mm,139.804mm) on Top Layer Location : [X = 106.172mm][Y = 139.614mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (105.283mm,138.129mm) (107.061mm,140.669mm) on Top Layer And Track (106.172mm,139.804mm)(107.428mm,141.061mm) on Top Layer Location : [X = 106.552mm][Y = 140.172mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Pad U2-10(118.872mm,104.22mm) on Top Layer Location : [X = 118.872mm][Y = 104.22mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (108.312mm,115.16mm)(118.872mm,104.6mm) on Top Layer Location : [X = 118.492mm][Y = 104.98mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (118.872mm,103.84mm)(118.872mm,104.22mm) on Top Layer Location : [X = 118.872mm][Y = 104.03mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (118.872mm,103.84mm)(120.778mm,101.934mm) on Top Layer Location : [X = 119.252mm][Y = 103.46mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (117.983mm,102.95mm) (119.761mm,105.49mm) on Top Layer And Track (118.872mm,104.22mm)(118.872mm,104.6mm) on Top Layer Location : [X = 118.872mm][Y = 104.41mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Pad U2-11(121.412mm,104.22mm) on Top Layer Location : [X = 121.412mm][Y = 104.22mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Track (121.412mm,103.84mm)(121.412mm,104.22mm) on Top Layer Location : [X = 121.412mm][Y = 104.03mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Track (121.412mm,103.84mm)(122.689mm,102.563mm) on Top Layer Location : [X = 121.792mm][Y = 103.46mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (120.523mm,102.95mm) (122.301mm,105.49mm) on Top Layer And Track (121.412mm,104.22mm)(121.412mm,106.887mm) on Top Layer Location : [X = 121.412mm][Y = 104.79mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (130.683mm,102.95mm) (132.461mm,105.49mm) on Top Layer And Pad U2-15(131.572mm,104.22mm) on Top Layer Location : [X = 131.572mm][Y = 104.22mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (130.683mm,102.95mm) (132.461mm,105.49mm) on Top Layer And Track (131.572mm,104.22mm)(131.572mm,104.6mm) on Top Layer Location : [X = 131.572mm][Y = 104.41mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (97.663mm,102.95mm) (99.441mm,105.49mm) on Top Layer And Pad U2-2(98.552mm,104.22mm) on Top Layer Location : [X = 98.552mm][Y = 104.22mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (97.663mm,102.95mm) (99.441mm,105.49mm) on Top Layer And Track (98.552mm,104.22mm)(98.552mm,104.6mm) on Top Layer Location : [X = 98.552mm][Y = 104.41mm]
-   Violation between Short-Circuit Constraint: Between Area Fill (97.663mm,102.95mm) (99.441mm,105.49mm) on Top Layer And Track (98.552mm,104.6mm)(99.949mm,105.997mm) on Top Layer Location : [X = 98.932mm][Y = 104.98mm]
-   Violation between Short-Circuit Constraint: Between Pad J2-(145.765mm,137.378mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad J2-(157.765mm,137.378mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad J3-(160.154mm,137.312mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad J3-(172.154mm,137.312mm) on Multi-Layer And Polygon Region (14 hole(s)) Bottom Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad J3-(172.154mm,137.312mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad J4-(146.235mm,107.069mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad J4-(158.235mm,107.069mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad J5-(160.624mm,107.014mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad J5-(172.624mm,107.014mm) on Multi-Layer And Polygon Region (14 hole(s)) Bottom Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad J5-(172.624mm,107.014mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad U1-17(120.942mm,122.381mm) on Bottom Layer And Pad U1-27(120.942mm,121.881mm) on Multi-Layer Location : [X = 120.942mm][Y = 121.881mm]
-   Violation between Short-Circuit Constraint: Between Pad U1-17(120.942mm,122.381mm) on Bottom Layer And Pad U1-28(120.942mm,122.881mm) on Multi-Layer Location : [X = 120.942mm][Y = 122.881mm]
-   Violation between Short-Circuit Constraint: Between Pad U1-18(122.017mm,122.381mm) on Bottom Layer And Pad U1-23(122.017mm,121.881mm) on Multi-Layer Location : [X = 122.017mm][Y = 121.881mm]
-   Violation between Short-Circuit Constraint: Between Pad U1-18(122.017mm,122.381mm) on Bottom Layer And Pad U1-24(122.017mm,122.881mm) on Multi-Layer Location : [X = 122.017mm][Y = 122.881mm]
-   Violation between Short-Circuit Constraint: Between Pad U1-19(123.093mm,122.381mm) on Bottom Layer And Pad U1-21(123.093mm,121.881mm) on Multi-Layer Location : [X = 123.093mm][Y = 121.881mm]
-   Violation between Short-Circuit Constraint: Between Pad U1-19(123.093mm,122.381mm) on Bottom Layer And Pad U1-22(123.093mm,122.881mm) on Multi-Layer Location : [X = 123.093mm][Y = 122.881mm]
-   Violation between Short-Circuit Constraint: Between Pad U1-19(123.093mm,122.381mm) on Bottom Layer And Track (123.093mm,122.381mm)(123.305mm,122.169mm) on Bottom Layer Location : [X = 123.199mm][Y = 122.275mm]
-   Violation between Short-Circuit Constraint: Between Pad U1-20(124.168mm,122.381mm) on Bottom Layer And Pad U1-25(124.168mm,121.881mm) on Multi-Layer Location : [X = 124.168mm][Y = 121.881mm]
-   Violation between Short-Circuit Constraint: Between Pad U1-20(124.168mm,122.381mm) on Bottom Layer And Pad U1-26(124.168mm,122.881mm) on Multi-Layer Location : [X = 124.168mm][Y = 122.881mm]
-   Violation between Short-Circuit Constraint: Between Pad U2-35(138.252mm,104.753mm) on Multi-Layer And Polygon Region (14 hole(s)) Bottom Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad U2-35(138.252mm,104.753mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad U2-36(138.252mm,138.891mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad U2-36(138.252mm,138.891mm) on Multi-Layer And Polygon Region (5 hole(s)) Bottom Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad U2-37(94.386mm,138.891mm) on Multi-Layer And Polygon Region (14 hole(s)) Bottom Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad U2-37(94.386mm,138.891mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad U2-38(94.402mm,104.753mm) on Multi-Layer And Polygon Region (14 hole(s)) Bottom Layer Location : [X = 0mm][Y = 0mm]
-   Violation between Short-Circuit Constraint: Between Pad U2-38(94.402mm,104.753mm) on Multi-Layer And Polygon Region (42 hole(s)) Top Layer Location : [X = 0mm][Y = 0mm]
-Rule Violations :48
+Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J4-1(149.235mm,105.109mm) on Multi-Layer And Pad P1-6(150.749mm,121.365mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad U1-11(123.305mm,120.131mm) on Bottom Layer And Via (123.825mm,116.078mm) from Top Layer to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net +5 Between Pad U2-33(98.577mm,139.399mm) on Top Layer And Pad U2-31(103.632mm,139.399mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Track (123.093mm,122.381mm)(123.305mm,122.169mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Net TX_Enable Between Track (130.303mm,105.869mm)(131.318mm,105.869mm) on Top Layer And Track (131.572mm,104.22mm)(131.572mm,104.6mm) on Top Layer 
-   Violation between Un-Routed Net Constraint: Track (135.233mm,153.924mm)(181.423mm,153.924mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Track (179.899mm,153.416mm)(181.423mm,153.924mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Track (179.899mm,154.432mm)(181.423mm,153.924mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Track (181.423mm,143.336mm)(181.423mm,154.178mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Track (181.442mm,142.863mm)(209.423mm,142.863mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Track (181.804mm,99.955mm)(209.423mm,99.955mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Track (208.661mm,101.479mm)(209.169mm,99.955mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Track (208.661mm,141.339mm)(209.169mm,142.863mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Track (209.169mm,124.583mm)(209.169mm,142.863mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Track (209.169mm,142.863mm)(209.677mm,141.339mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Track (209.169mm,99.955mm)(209.169mm,117.422mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Track (209.169mm,99.955mm)(209.677mm,101.479mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Track (82.188mm,143.117mm)(82.188mm,154.178mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Track (82.188mm,153.924mm)(127.565mm,153.924mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Track (82.188mm,153.924mm)(83.712mm,153.416mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Track (82.188mm,153.924mm)(83.712mm,154.432mm) on Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Via (130.81mm,135.208mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Via (146.685mm,131.398mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Via (177.423mm,103.955mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Via (177.423mm,138.955mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Via (86.423mm,103.955mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Via (86.423mm,138.955mm) from Top Layer to Bottom Layer Dead Copper - Net Not Assigned.
-Rule Violations :27
+Rule Violations :0
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
 
 Processing Rule : Width Constraint (Min=0.127mm) (Max=0.5mm) (Preferred=0.2mm) (All)
-   Violation between Width Constraint: Track (123.093mm,122.381mm)(123.305mm,122.169mm) on Bottom Layer Actual Width = 0.1mm, Target Width = 0.127mm
-Rule Violations :1
-
-Processing Rule : Width Constraint (Min=0.18mm) (Max=0.5mm) (Preferred=0.18mm) (InNetClass('Voltage'))
 Rule Violations :0
 
 Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
@@ -152,14 +40,13 @@ Processing Rule : Silk to Silk (Clearance=0mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
-   Violation between Net Antennae: Track (130.303mm,105.869mm)(131.318mm,105.869mm) on Top Layer 
-Rule Violations :1
+Rule Violations :0
 
 Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
 Rule Violations :0
 
 
-Violations Detected : 107
+Violations Detected : 0
 Waived Violations : 0
 PCB Health Issues : 0
 Time Elapsed        : 00:00:00
