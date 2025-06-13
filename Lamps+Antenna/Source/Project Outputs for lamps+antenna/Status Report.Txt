@@ -1,0 +1,22 @@
+Output: Gerber X2 Files
+Type  : GerberX2
+From  : Variant [[No Variations]] of Project [lamps+antenna.PrjPcb]
+   Generated File[lamps+antenna_Copper_Signal_Top.gbr]
+   Generated File[lamps+antenna_Copper_Signal_Bot.gbr]
+   Generated File[lamps+antenna_Legend_Top.gbr]
+   Generated File[lamps+antenna_Legend_Bot.gbr]
+   Generated File[lamps+antenna_Soldermask_Top.gbr]
+   Generated File[lamps+antenna_Soldermask_Bot.gbr]
+   Generated File[lamps+antenna_Paste_Top.gbr]
+   Generated File[lamps+antenna_Paste_Bot.gbr]
+   Generated File[lamps+antenna_Profile.gbr]
+   Generated File[lamps+antenna_NPTH_Drill.gbr]
+   Generated File[lamps+antenna_PTH_Drill.gbr]
+   Generated File[lamps+antenna.EXTREP]
+   Generated File[lamps+antenna.REP]
+
+
+Files Generated   : 13
+Documents Printed : 0
+
+Finished Output Generation At 21:32:43 On 09.04.2025
