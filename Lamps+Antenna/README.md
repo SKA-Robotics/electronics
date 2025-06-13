@@ -1,4 +1,3 @@
-# CANduino
 ## Short description
 This board contains three parts:
 - 24V Step-Up/Step-Down voltage regulator
