@@ -16,3 +16,5 @@ ProjectPath=PC_PSU\Source\PC_PSU.PrjPcb
 ProjectPath=Roboszpon\Source\Roboszpon.PrjPcb
 [Project8]
 ProjectPath=Zasilacz\Zasilacz.PrjPcb
+[Project9]
+ProjectPath=E:\EEEFK1H471AM\EEEFK1H471AM.LibPkg
